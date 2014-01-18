@@ -1,0 +1,29 @@
+CREATE TABLE [dbo].[Questions](
+ [ID] [int] IDENTITY(1,1) NOT NULL,
+ [Question] [varchar](500) NULL,
+ [Answer_1] [varchar](200) NULL,
+ [Answer_2] [varchar](200) NULL,
+ [Answer_3] [varchar](200) NULL,
+ [Answer_4] [varchar](200) NULL,
+ [Correct_Answer] [varchar](200) NULL,
+ [Question_Points] [int] NOT NULL,
+ [User_Name] [char](10) NULL
+) ON [PRIMARY]
+
+CREATE TABLE [dbo].[Test](
+ [User_Name] [char](10) NOT NULL,
+ [Points] [int] NULL,
+ [Question_ID] [int] NULL,
+ [Answer] [varchar](10) NULL
+) ON [PRIMARY]
+
+CREATE TABLE [dbo].[Users](
+ [User_Name] [char](10) NOT NULL,
+ [Password] [varbinary](100) NOT NULL,
+ [E-Mail] [varchar](52) NOT NULL,
+ [Secret_Question] [varchar](52) NOT NULL,
+ [Secret_Answer] [varchar](52) NOT NULL,
+ [MaxPoints] [int] NOT NULL,
+ [EndedTime] [bigint] NULL,
+ [User_IP] [varchar](50) NOT NULL
+) ON [PRIMARY]
