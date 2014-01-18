@@ -1,0 +1,58 @@
+body{
+	margin-top:0px;
+	text-align:center;
+	margin-left:auto;
+	width:1000px;
+	margin-right:auto;
+	background-color:black;
+}
+h1,h2,ul,dl,ol,p{
+	margin-top:0px;
+}
+dd{
+	color:#99FF00;
+	font-variant:small-caps;
+	font-weight:bold;
+}
+dt{
+	color:red;
+	font-style:italic;
+	font-variant:small-caps;
+}
+
+a{
+	text-decoration:none;
+	color:white;
+}
+a:hover{
+	text-decoration:none;
+	color:#99FF00;
+}
+th{
+	color:Orange;
+	font-weight:bold;
+	font-variant:small-caps;
+	padding-left:10px;
+}
+td{
+	color:white;
+	padding-left:10px;
+}
+table{
+	text-align:center;
+}
+label{
+	color:white;
+}
+input,select,textarea{
+	margin-top:5px;
+	color:black;
+	background-color:grey;
+}
+p{
+	color:white;
+}
+button{
+	color:white;
+	background-color:grey;
+}
