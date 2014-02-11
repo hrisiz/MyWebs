@@ -1,0 +1,111 @@
+header nav{
+	background-color:grey;
+	border-bottom-left-radius:25px;	
+	border-bottom-right-radius:25px;
+	min-height:50px;
+	margin-top:-5px;
+}
+section{
+	margin-top:70px;
+}
+section div#left{
+	box-shadow:-4px -4px 0px white;
+	border-right-color:black;
+	border-top-left-radius:25px;
+	border-bottom-left-radius:25px;
+	border-style:double;
+	float:left;	
+	width:19.65%;
+	min-height:400px;
+	background-color:grey;
+}
+section div#right{
+	box-shadow:4px -4px 0px white;
+	border-left-color:black;
+	border-top-right-radius:25px;
+	border-bottom-right-radius:25px;
+	border-style:double;
+	float:right;
+	width:19.65%;
+	min-height:400px;
+	background-color:grey;
+}
+section div#center{
+	box-shadow:0px -4px 0px white;;
+	border-style:double;
+	width:60%;
+	margin-left:19.85%;
+	min-height:800px;
+	background-color:grey;
+	border-bottom-left-radius:20px;
+	border-bottom-right-radius:20px;
+}
+section div h2{
+	margin-top:10px;
+	border:solid;
+	background-color:LightCyan;
+	border-color:white;
+	color:black;
+}
+section div#left h2{
+	clear:both;
+	padding-left:20px;
+	border-right:none;
+	border-bottom-left-radius:20px;
+	border-top-left-radius:20px;
+	text-align:left;
+}
+section div#right h2{
+	cursor:pointer;
+	padding-right:20px;
+	border-left:none;
+	border-bottom-right-radius:20px;
+	border-top-right-radius:20px;
+	text-align:right;
+}
+section div div h3{
+	cursor:pointer;
+	clear:both;
+}
+#left h2+div h3+div div.left{
+	float:left;
+	width:49%;
+}
+#left h2+div h3+div div.right{
+	float:right;
+	width:49%;
+}
+#left h2+div h3+div div li{
+	margin-top:3px;
+	margin-bottom:3px;
+	border:solid;
+	background-color:LightCyan;
+	border-color:white;
+	color:black;
+	cursor:pointer;
+	font-size:0.8em;
+}
+#left h2+div h3+div div.left li{
+	text-align:right;
+	padding-right:10px;
+	border-left:none;
+	border-bottom-right-radius:20px;
+	border-top-right-radius:20px;
+	text-align:right;
+}
+#left h2+div h3+div div.right li{
+	text-align:left;
+	padding-left:10px;
+	border-right:none;
+	border-bottom-left-radius:20px;
+	border-top-left-radius:20px;
+	text-align:left;
+}
+#left h2+div h3+div div ul{
+	margin:0px;
+	padding:0px;
+}
+footer{
+	clear:both;
+	margin-top:50px;
+}
