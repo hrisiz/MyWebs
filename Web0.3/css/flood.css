@@ -1,0 +1,9 @@
+body{
+	text-align:center;
+	color:white;
+	background-image:url('../images/logo11.jpg'); 
+	background-repeat:no-repeat; 
+	background-color:black; 
+background-attachment:fixed;
+	background-position:center;
+}

@@ -1,0 +1,115 @@
+div#Header_MENU{
+	margin-top:-15px;
+	margin-bottom:65px;
+}
+
+div#Content{
+	margin-top:-5px;
+	min-height:550px;
+	text-align:center;
+	background-image:url('../images/Content_BG.png');
+	background-repeat:repeat-y;
+	padding-bottom:50px;
+	background-size:100.09% 1px;
+}
+div#Content_Big{
+	position:absolute;
+	top:280px;
+	margin-left:250px;
+	width:500px;
+}
+img#Bottom_Content_image{
+	margin-left:-2px;
+	margin-top:-25px;
+}
+
+
+div#Left_Menu{
+	float:left;
+}
+div#Right_Menu{
+	float:right;
+}
+
+
+div#UserPanel_BIG{
+	margin-left:20px;
+	margin-top:-30px;	
+	width:300px;
+}
+div#UserPanel{
+	margin-top:-5px;
+	height:40px;
+	background-image:url('../images/User_BG.png');
+	background-repeat:repeat-y;
+	background-size:370px 1px;
+}
+
+div#RightMenu_BIG{
+	margin-left:70px;
+	margin-top:-30px;
+	width:300px;
+}
+div#RightMenu{
+	margin-top:-30px;
+	height:10px;
+	background-image:url('../images/menu_BG.png');
+	background-repeat:repeat-y;
+	background-size:300px 1px;
+	padding-bottom:30px;
+}
+ul#RightMenu{
+	margin-right:50px;
+}
+
+
+div#TopCharacters_BIG{
+	margin-left:-10px;
+	width:400px;
+}
+div#TopCharacters{
+	margin-top:-5px;
+	height:80px;
+	text-align:center;
+	background-image:url('../images/Top10C_BG.png');
+	background-repeat:repeat-y;
+	background-size:395px 1px;
+}
+table#TopCharacters{
+	margin-top:-80px;
+	margin-left:90px;
+}
+
+
+div#Information_BIG{
+	margin-right:-10px;
+	width:400px;
+}
+div#Information{
+	margin-top:-60px;
+	height:60px;
+	text-align:center;
+	background-image:url('../images/Info_BG.png');
+	background-repeat:repeat-y;
+	background-size:400px 1px;
+}
+ul#inline{
+	margin-left:-20px;
+	margin-right:20px;
+}
+
+p.top_menu_elements#Home_menu{
+	background-image:url("../images/Home_hover.png");
+}
+p.top_menu_elements#Register_menu{
+	background-image:url("../images/Register_hover.png");
+}
+p.top_menu_elements#Download_menu{
+	background-image:url("../images/Download_hover.png");
+}
+p.top_menu_elements#Rankings_menu{
+	background-image:url("../images/Rankings_hover.png");
+}
+p.top_menu_elements#Information_menu{
+	background-image:url("../images/Information_hover.png");
+}
