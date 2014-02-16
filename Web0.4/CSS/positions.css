@@ -1,0 +1,19 @@
+section{
+	margin-top:70px;
+}
+section div#left{
+	float:left;	
+}
+section div#right{
+	float:right;
+}
+section div#center{
+	margin-left:19.85%;
+}
+section div#left h2{
+	clear:both;
+}
+footer{
+	clear:both;
+	margin-top:50px;
+}
