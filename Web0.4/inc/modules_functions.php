@@ -74,17 +74,17 @@ function generate_item_hex($item_type,$item_id,$item_durability,$item_level,$ite
 		$BB+=4; 
 	if($BB<0)
 		$BB=0; 
-	if($ex1)
+	if($ex1==1)
 		$HH+=1;
-	if($ex2)
+	if($ex2==1)
 		$HH+=2;
-	if($ex3)
+	if($ex3==1)
 		$HH+=4;
-	if($ex4)
+	if($ex4==1)
 		$HH+=8;
-	if($ex5)
+	if($ex5==1)
 		$HH+=16;
-	if($ex6)
+	if($ex6==1)
 		$HH+=32; 
 
 

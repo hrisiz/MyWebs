@@ -45,6 +45,7 @@ section div#center{
 	min-height:800px;
 	border-bottom-left-radius:20px;
 	border-bottom-right-radius:20px;
+	padding-bottom:20px;
 }
 section div h2{
 	margin-top:10px;
@@ -67,4 +68,46 @@ section div#right h2{
 	border-bottom-right-radius:20px;
 	border-top-right-radius:20px;
 	text-align:right;
+}
+
+table{
+	margin-left:auto;
+	margin-right:auto;
+}
+
+input,select,option,textarea{
+	background-color: #BFBDBD;
+    border:solid 1px #BFBDBD;
+	padding-left:10px;
+    height: 28px;
+	padding-right:10px;
+    box-shadow: 2px 2px 0 #828181 inset;
+	margin:5px;
+	color:black;
+}
+button,input[type="submit"]{
+	border:none;
+	height:100%;	
+	border-radius:10px;
+	background-color:LightCyan;
+	color:black;
+	padding-left:1em;
+	padding-right:1em;
+	padding-top:0.2em;
+	padding-bottom:0.1em;
+	font-size:1.2em;
+	margin:2px;
+}
+textarea{
+	height:200px;
+	width:80%;
+	resize: none;
+}
+input[type="submit"]:hover,button:hover{
+	cursor:pointer;
+}
+ul{
+	list-style-type: none;
+	text-align:left;
+	padding:20px 0px 10px 20px;
 }

@@ -3,9 +3,12 @@
 	margin:0px;
 	font-style:italic;
 	color:white;	
-	font-size:16px;
+	font-size:14px;
 	font-family:Verdana,Arial,Sans-serif;
 	text-decoration:none;
+}
+a{
+	color:black;
 }
 header nav a{
 	color:black;
@@ -19,7 +22,7 @@ header nav a{
 	padding-left:1em;
 	padding-right:1em;
 }
-a:hover{
+header a:hover{
 	color:LightCyan;
 }
 h1,h2,h3,h4,h5,h6{
@@ -32,11 +35,14 @@ h1{
 	padding-left:10px;
 }
 h2{
-    min-height:1.3em;
+    min-height:1.5em;
+	font-size:1.5em;
+}
+h3{
 	font-size:1.3em;
 }
 p{
-    height:1em;
+    min-height:1em;
 }
 .success{
 	font-weight:bold;
@@ -46,47 +52,6 @@ p{
 	font-weight:bold;
 	color:#CC0000;
 }
-input,select,option,textarea{
-	background-color: #BFBDBD;
-    border:solid 1px #BFBDBD;
-	padding-left:10px;
-    height: 28px;
-	padding-right:10px;
-    box-shadow: 2px 2px 0 #828181 inset;
-	margin:5px;
-	color:black;
-}
-button,input[type="submit"]{
-	border:none;
-	height:100%;	
-	border-radius:10px;
-	background-color:LightCyan;
-	color:black;
-	padding-left:1em;
-	padding-right:1em;
-	padding-top:0.2em;
-	padding-bottom:0.05em;
-	font-size:1em;
-	margin:2px;
-	margin-top:10px;
-}
-textarea{
-	height:200px;
-	width:80%;
-	resize: none;
-}
-input[type="submit"]:hover,button:hover{
-	cursor:pointer;
-}
-ul{
-	list-style-type: none;
-	text-align:left;
-	padding:20px 0px 10px 20px;
-}
 th{
 	color:Gold;
-}
-table{
-	margin-left:auto;
-	margin-right:auto;
 }

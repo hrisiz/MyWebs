@@ -4,8 +4,15 @@ $check = $check[0];
 if(count($check) <= 0 || time() >= $check["EndTime"]){
 	$item = $grizismudb->query("Select Top 1 * From Items Where (type BETWEEN 7 AND 11 AND id>10) OR (id>8 AND type BETWEEN 1 AND 6) OR (type=0 and id>15) order by newid()")->fetchAll();
 	$item = $item[0];
-	$item_array = Array("Level" => rand(0,11),"Duration" => 255,"Option" => rand(0,7),"Id"=>$item["id"],"Type" => $item["type"],"ExOptions" => 63,"Luck" => rand(0,1),"Skill" => 1);
-	$item_code = create_item_code($item_array);
+	$ex = array(0,0,0,0,0);
+	for($i=0;$i < 5;$i++){
+		if(count(array_keys($ex,1)) < 2){
+			$ex[rand(0,4)] = 1;
+		}else{
+			break;
+		}
+	}
+	$item_code = generate_item_hex($item["type"],$item["id"],255,rand(0,11),rand(0,7),$item['skill'],rand(0,1),$ex[0],$ex[1],$ex[2],$ex[3],$ex[4],$ex[5]);
 	$end_time = time()+48000;
 	$grizismudb->exec("Delete From Auction Where Id=101");
 	if(count($check) > 0){

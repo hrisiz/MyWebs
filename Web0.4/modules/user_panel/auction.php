@@ -14,7 +14,7 @@ if(count($item_code) > 0){
 	}
 	$onmouseover = "<div class=show_item_info><p class=".$item['name_color'].">".$item['name']." +".$item['level']."</p><p>".$item['dur']." Durability</p><p class=show_item_excellent_options>".$item['skill']."".$item['luck']."".$item_options."</p></div>";
 	?>
-	<p onmouseover="return overlib('<?=$onmouseover?>');" onmouseout="return nd()"><img src="images/items/<?=$item['image']?>"/></p>
+	<div onmouseover="return overlib('<?=$onmouseover?>');" onmouseout="return nd()"><img src="images/items/<?=$item['image']?>"/></div>
 
 	<form method="POST">
 		<label>Money</label>

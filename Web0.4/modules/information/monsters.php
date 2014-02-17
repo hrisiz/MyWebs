@@ -7,16 +7,6 @@ if (!isset($_GET['city']))
 {
 	$_GET['city'] = "Lorencia";
 }
-?>
-<ul class="information">
-	<?php
-	for ($i = 0; $i < count($server['Citys']); $i++)
-	{
-		echo"<li><a href=\"?page=Modules_Information&subpage=Monsters&city=".$server['Citys'][$i]."\"><button>".$server['Citys'][$i]."</button></a></li>";
-	}
-	?>
-</ul>
-<?php
 $monster = explode("\r\n",file_get_contents($server['Server_Files_Folder']."/Data/Monster.txt"));
 for ($i = 0; $i <= count($monster); $i++)
 {

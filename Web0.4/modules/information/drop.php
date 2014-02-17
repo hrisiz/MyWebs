@@ -4,12 +4,6 @@ $path_parts = pathinfo(__FILE__);
 preg_match("/".$path_parts['basename']."/", $_SERVER['SCRIPT_NAME'], $matches);
 if (!empty($matches[0])){header("Location: /?page=News");}
 echo "<ul class=\"information\">";
-for ($i = 1; $i <= 5;$i++)
-{
-	echo"<li><a href=\"?page=Information&subpage=Drop&Box=$i\"><button>Box +$i</button></a></li>";
-}
-echo "</ul>";
-echo "<ul class=\"information\">";
 if (!isset($_GET['Box']))
 {
 	$_GET['Box'] = 1;

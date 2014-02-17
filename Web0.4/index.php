@@ -4,6 +4,7 @@
 	include "inc/server_settings.php";
 	include "inc/security.php";
 	include "inc/modules_functions.php";
+	include "inc/get_item_info.php";
 	if(isset($_SESSION['User'])){
 		$account = $_SESSION['User'];
 	}
@@ -18,6 +19,7 @@
 		<link  rel="stylesheet" type="text/css" href="CSS/positions.css"></link>
 		<link  rel="stylesheet" type="text/css" href="CSS/modules.css"></link>
 		<link  rel="stylesheet" type="text/css" href="CSS/user_panel.css"></link>
+		<script type="text/JavaScript" src="JS/overlib/overlib.js"></script>
 	
 		</head>
 	<body>

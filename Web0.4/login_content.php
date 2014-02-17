@@ -25,7 +25,7 @@ if(!isset($_SESSION['User'])){
 		<label for="password">Password</label>
 		<input type="password" name="password" id="password"/>
 		<input type="Submit" name="login" value="LogIn"/>
-		<button>Register</button>
+		<button><a href="?page=Modules_Register">Register</a></button>
 	</form>
 <?php
 }else{
