@@ -1,0 +1,232 @@
+Attack Date: 13-11-2013 @ 05:04:22 | Attacker IP: 127.0.0.1 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a8%d0%be%d0%bf%d0%b5%d0%bd%d1%85%d0%b0%d1%83%d0%b5%d1%80&number=22
+
+Attack Date: 13-11-2013 @ 05:04:25 | Attacker IP: 127.0.0.1 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=21
+
+Attack Date: 13-11-2013 @ 05:16:50 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a8%d0%be%d0%bf%d0%b5%d0%bd%d1%85%d0%b0%d1%83%d0%b5%d1%80&number=21
+
+Attack Date: 13-11-2013 @ 05:16:53 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=22
+
+Attack Date: 13-11-2013 @ 05:17:34 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a8%d0%be%d0%bf%d0%b5%d0%bd%d1%85%d0%b0%d1%83%d0%b5%d1%80&number=21
+
+Attack Date: 13-11-2013 @ 05:17:44 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a8%d0%be%d0%bf%d0%b5%d0%bd%d1%85%d0%b0%d1%83%d0%b5%d1%80&number=21
+
+Attack Date: 13-11-2013 @ 05:18:42 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=22
+
+Attack Date: 13-11-2013 @ 05:19:31 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a8%d0%be%d0%bf%d0%b5%d0%bd%d1%85%d0%b0%d1%83%d0%b5%d1%80&number=21
+
+Attack Date: 13-11-2013 @ 05:19:36 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a8%d0%be%d0%bf%d0%b5%d0%bd%d1%85%d0%b0%d1%83%d0%b5%d1%80&number=21
+
+Attack Date: 13-11-2013 @ 05:19:48 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a8%d0%be%d0%bf%d0%b5%d0%bd%d1%85%d0%b0%d1%83%d0%b5%d1%80&number=22
+
+Attack Date: 13-11-2013 @ 05:19:51 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a8%d0%be%d0%bf%d0%b5%d0%bd%d1%85%d0%b0%d1%83%d0%b5%d1%80&number=21
+
+Attack Date: 13-11-2013 @ 05:20:06 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a8%d0%be%d0%bf%d0%b5%d0%bd%d1%85%d0%b0%d1%83%d0%b5%d1%80&number=21
+
+Attack Date: 13-11-2013 @ 05:20:39 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=21
+
+Attack Date: 13-11-2013 @ 05:21:51 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d1%82%d0%b5%d0%bb&number=21
+
+Attack Date: 13-11-2013 @ 05:22:04 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d1%82%d0%b5%d0%bb&number=21
+
+Attack Date: 13-11-2013 @ 05:22:07 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%9f%d0%bb%d0%b0%d1%82%d0%be%d0%bd&number=21
+
+Attack Date: 13-11-2013 @ 05:22:56 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d1%82%d0%b5%d0%bb&number=21
+
+Attack Date: 13-11-2013 @ 05:23:02 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a8%d0%be%d0%bf%d0%b5%d0%bd%d1%85%d0%b0%d1%83%d0%b5%d1%80&number=22
+
+Attack Date: 13-11-2013 @ 05:23:33 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=21
+
+Attack Date: 13-11-2013 @ 05:24:05 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=21
+
+Attack Date: 13-11-2013 @ 05:24:49 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=21
+
+Attack Date: 13-11-2013 @ 05:25:43 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a8%d0%be%d0%bf%d0%b5%d0%bd%d1%85%d0%b0%d1%83%d0%b5%d1%80&number=21
+
+Attack Date: 13-11-2013 @ 05:25:55 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a1%d1%83%d0%bd%20%d0%94%d0%b7%d1%8a&number=22
+
+Attack Date: 13-11-2013 @ 05:28:18 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a8%d0%be%d0%bf%d0%b5%d0%bd%d1%85%d0%b0%d1%83%d0%b5%d1%80&number=21
+
+Attack Date: 13-11-2013 @ 05:29:49 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a8%d0%be%d0%bf%d0%b5%d0%bd%d1%85%d0%b0%d1%83%d0%b5%d1%80&number=22
+
+Attack Date: 13-11-2013 @ 05:30:05 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d0%bd&number=22
+
+Attack Date: 13-11-2013 @ 05:30:07 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%9f%d0%bb%d0%b0%d1%82%d0%be%d0%bd&number=21
+
+Attack Date: 13-11-2013 @ 05:30:10 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=21
+
+Attack Date: 13-11-2013 @ 05:30:15 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d1%82%d0%b5%d0%bb&number=21
+
+Attack Date: 13-11-2013 @ 05:30:17 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a8%d0%be%d0%bf%d0%b5%d0%bd%d1%85%d0%b0%d1%83%d0%b5%d1%80&number=22
+
+Attack Date: 13-11-2013 @ 05:32:32 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d1%82%d0%b5%d0%bb&number=21
+
+Attack Date: 13-11-2013 @ 05:32:38 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a8%d0%be%d0%bf%d0%b5%d0%bd%d1%85%d0%b0%d1%83%d0%b5%d1%80&number=22
+
+Attack Date: 13-11-2013 @ 05:32:57 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d1%82%d0%b5%d0%bb&number=21
+
+Attack Date: 13-11-2013 @ 05:32:58 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d0%bd&number=22
+
+Attack Date: 13-11-2013 @ 05:33:53 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a8%d0%be%d0%bf%d0%b5%d0%bd%d1%85%d0%b0%d1%83%d0%b5%d1%80&number=21
+
+Attack Date: 13-11-2013 @ 05:34:12 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%9f%d0%bb%d0%b0%d1%82%d0%be%d0%bd&number=21
+
+Attack Date: 13-11-2013 @ 05:34:18 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=22
+
+Attack Date: 13-11-2013 @ 05:34:24 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=21
+
+Attack Date: 13-11-2013 @ 05:34:30 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=22
+
+Attack Date: 13-11-2013 @ 05:34:35 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=21
+
+Attack Date: 13-11-2013 @ 05:34:45 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=21
+
+Attack Date: 13-11-2013 @ 05:36:00 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=21
+
+Attack Date: 13-11-2013 @ 05:37:27 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=21
+
+Attack Date: 13-11-2013 @ 05:38:34 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=21
+
+Attack Date: 13-11-2013 @ 05:38:43 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d1%82%d0%b5%d0%bb&number=21
+
+Attack Date: 13-11-2013 @ 05:38:51 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d1%82%d0%b5%d0%bb
+
+Attack Date: 13-11-2013 @ 05:39:49 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=22
+
+Attack Date: 13-11-2013 @ 05:39:51 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d1%82%d0%b5%d0%bb&number=21
+
+Attack Date: 13-11-2013 @ 05:40:09 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a8%d0%be%d0%bf%d0%b5%d0%bd%d1%85%d0%b0%d1%83%d0%b5%d1%80&number=21
+
+Attack Date: 13-11-2013 @ 05:40:17 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%9f%d0%bb%d0%b0%d1%82%d0%be%d0%bd&number=21
+
+Attack Date: 13-11-2013 @ 05:40:27 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%9f%d0%bb%d0%b0%d1%82%d0%be%d0%bd&number=21
+
+Attack Date: 13-11-2013 @ 05:40:51 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a8%d0%be%d0%bf%d0%b5%d0%bd%d1%85%d0%b0%d1%83%d0%b5%d1%80&number=21
+
+Attack Date: 13-11-2013 @ 05:42:29 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a8%d0%be%d0%bf%d0%b5%d0%bd%d1%85%d0%b0%d1%83%d0%b5%d1%80&number=21
+
+Attack Date: 13-11-2013 @ 05:42:42 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a8%d0%be%d0%bf%d0%b5%d0%bd%d1%85%d0%b0%d1%83%d0%b5%d1%80&number=22
+
+Attack Date: 13-11-2013 @ 05:42:48 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d0%bd&number=22
+
+Attack Date: 13-11-2013 @ 05:43:17 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=21
+
+Attack Date: 13-11-2013 @ 05:44:24 | Attacker IP: 192.168.0.101 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a1%d1%83%d0%bd%20%d0%94%d0%b7%d1%8a&number=22
+
+Attack Date: 13-11-2013 @ 05:54:24 | Attacker IP: 127.0.0.1 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a8%d0%be%d0%bf%d0%b5%d0%bd%d1%85%d0%b0%d1%83%d0%b5%d1%80&number=21
+
+Attack Date: 13-11-2013 @ 05:54:25 | Attacker IP: 127.0.0.1 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a8%d0%be%d0%bf%d0%b5%d0%bd%d1%85%d0%b0%d1%83%d0%b5%d1%80&number=22
+
+Attack Date: 13-11-2013 @ 05:54:58 | Attacker IP: 127.0.0.1 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d0%bd&number=22
+
+Attack Date: 13-11-2013 @ 05:55:00 | Attacker IP: 127.0.0.1 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%9f%d0%bb%d0%b0%d1%82%d0%be%d0%bd&number=21
+
+Attack Date: 13-11-2013 @ 05:55:58 | Attacker IP: 127.0.0.1 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=21
+
+Attack Date: 13-11-2013 @ 05:55:59 | Attacker IP: 127.0.0.1 | QueryString: /Filosofiq/index.php?=value=question&answer=%d0%a1%d1%83%d0%bd%20%d0%94%d0%b7%d1%8a&number=22
+
+Attack Date: 13-11-2013 @ 06:16:46 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=1
+
+Attack Date: 13-11-2013 @ 06:16:55 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%a1%d1%83%d0%bd%20%d0%94%d0%b7%d1%8a&number=1
+
+Attack Date: 13-11-2013 @ 06:17:12 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%a8%d0%be%d0%bf%d0%b5%d0%bd%d1%85%d0%b0%d1%83%d0%b5%d1%80&number=1
+
+Attack Date: 13-11-2013 @ 06:18:46 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d1%82%d0%b5%d0%bb&number=1
+
+Attack Date: 13-11-2013 @ 06:25:52 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=1
+
+Attack Date: 13-11-2013 @ 06:46:43 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d1%82%d0%b5%d0%bb&number=2
+
+Attack Date: 13-11-2013 @ 06:48:26 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%9b%d0%be%d0%b3%d0%b8%d0%ba%d0%b0%d1%82%d0%b0&number=3
+
+Attack Date: 13-11-2013 @ 06:50:51 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d1%82%d0%b5%d0%bb&number=2
+
+Attack Date: 13-11-2013 @ 06:50:53 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=1
+
+Attack Date: 13-11-2013 @ 06:50:57 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%9b%d0%be%d0%b3%d0%b8%d0%ba%d0%b0%d1%82%d0%b0&number=3
+
+Attack Date: 13-11-2013 @ 06:51:06 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%a1%d1%83%d0%bd%20%d0%94%d0%b7%d1%8a&number=1
+
+Attack Date: 13-11-2013 @ 06:51:08 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%9c%d0%b0%d0%ba%d0%b8%d0%b0%d0%b2%d0%b5%d0%bb%d0%b8&number=2
+
+Attack Date: 13-11-2013 @ 06:52:14 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=1
+
+Attack Date: 13-11-2013 @ 06:52:16 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%95%d1%81%d1%82%d0%b5%d1%82%d0%b8%d0%ba%d0%b0%d1%82%d0%b0&number=3
+
+Attack Date: 13-11-2013 @ 06:52:20 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d1%82%d0%b5%d0%bb&number=1
+
+Attack Date: 13-11-2013 @ 06:52:22 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%9c%d0%b0%d0%ba%d0%b8%d0%b0%d0%b2%d0%b5%d0%bb%d0%b8&number=2
+
+Attack Date: 13-11-2013 @ 06:52:44 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=1
+
+Attack Date: 13-11-2013 @ 06:52:48 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%a5%d0%b5%d0%b3%d0%b5%d0%bb&number=2
+
+Attack Date: 13-11-2013 @ 06:52:50 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%9c%d0%b5%d1%82%d0%b0%d1%84%d0%b8%d0%b7%d0%b8%d0%ba%d0%b0%d1%82%d0%b0&number=3
+
+Attack Date: 13-11-2013 @ 06:52:59 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%95%d1%81%d1%82%d0%b5%d1%82%d0%b8%d0%ba%d0%b0%d1%82%d0%b0&number=3
+
+Attack Date: 13-11-2013 @ 06:53:01 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=1
+
+Attack Date: 13-11-2013 @ 06:53:06 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d1%82%d0%b5%d0%bb&number=2
+
+Attack Date: 13-11-2013 @ 06:53:22 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=1
+
+Attack Date: 13-11-2013 @ 06:53:24 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d1%82%d0%b5%d0%bb&number=2
+
+Attack Date: 13-11-2013 @ 06:54:21 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d1%82%d0%b5%d0%bb&number=2
+
+Attack Date: 13-11-2013 @ 06:54:28 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%95%d1%81%d1%82%d0%b5%d1%82%d0%b8%d0%ba%d0%b0%d1%82%d0%b0&number=3
+
+Attack Date: 13-11-2013 @ 06:54:40 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d1%82%d0%b5%d0%bb&number=2
+
+Attack Date: 13-11-2013 @ 06:54:42 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=1
+
+Attack Date: 13-11-2013 @ 06:54:44 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%95%d1%82%d0%b8%d0%ba%d0%b0%d1%82%d0%b0&number=3
+
+Attack Date: 13-11-2013 @ 08:32:23 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%95%d1%82%d0%b8%d0%ba%d0%b0%d1%82%d0%b0&number=3
+
+Attack Date: 13-11-2013 @ 08:32:59 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=1
+
+Attack Date: 13-11-2013 @ 08:33:03 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d1%82%d0%b5%d0%bb&number=2
+
+Attack Date: 13-11-2013 @ 08:33:14 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%95%d1%82%d0%b8%d0%ba%d0%b0%d1%82%d0%b0&number=3
+
+Attack Date: 13-11-2013 @ 08:33:16 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%a8%d0%be%d0%bf%d0%b5%d0%bd%d1%85%d0%b0%d1%83%d0%b5%d1%80&number=1
+
+Attack Date: 13-11-2013 @ 08:33:20 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=1
+
+Attack Date: 13-11-2013 @ 08:33:33 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d1%82%d0%b5%d0%bb&number=2
+
+Attack Date: 13-11-2013 @ 08:42:13 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=1
+
+Attack Date: 13-11-2013 @ 08:42:17 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d1%82%d0%b5%d0%bb&number=2
+
+Attack Date: 13-11-2013 @ 08:42:20 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%95%d1%82%d0%b8%d0%ba%d0%b0%d1%82%d0%b0&number=3
+
+Attack Date: 13-11-2013 @ 08:43:46 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=1
+
+Attack Date: 13-11-2013 @ 08:43:48 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d1%82%d0%b5%d0%bb&number=2
+
+Attack Date: 13-11-2013 @ 08:43:51 | Attacker IP: 78.83.158.151 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%95%d1%82%d0%b8%d0%ba%d0%b0%d1%82%d0%b0&number=3
+
+Attack Date: 14-11-2013 @ 08:00:30 | Attacker IP: 46.10.208.93 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=1
+
+Attack Date: 14-11-2013 @ 08:00:39 | Attacker IP: 46.10.208.93 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d1%82%d0%b5%d0%bb&number=2
+
+Attack Date: 14-11-2013 @ 08:00:43 | Attacker IP: 46.10.208.93 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%95%d1%82%d0%b8%d0%ba%d0%b0%d1%82%d0%b0&number=3
+
+Attack Date: 15-11-2013 @ 12:55:47 | Attacker IP: 46.10.208.93 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%a1%d0%be%d0%ba%d1%80%d0%b0%d1%82&number=1
+
+Attack Date: 15-11-2013 @ 12:55:54 | Attacker IP: 46.10.208.93 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%95%d1%82%d0%b8%d0%ba%d0%b0%d1%82%d0%b0&number=3
+
+Attack Date: 15-11-2013 @ 12:56:00 | Attacker IP: 46.10.208.93 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d1%82%d0%b5%d0%bb&number=2
+
+Attack Date: 15-11-2013 @ 12:56:46 | Attacker IP: 46.10.208.93 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d1%82%d0%b5%d0%bb&number=1
+
+Attack Date: 15-11-2013 @ 12:56:50 | Attacker IP: 46.10.208.93 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%90%d1%80%d0%b8%d1%81%d1%82%d0%be%d1%82%d0%b5%d0%bb&number=2
+
+Attack Date: 15-11-2013 @ 12:56:59 | Attacker IP: 46.10.208.93 | QueryString: /Philosophy/index.php?=value=question&answer=%d0%95%d1%81%d1%82%d0%b5%d1%82%d0%b8%d0%ba%d0%b0%d1%82%d0%b0&number=3
+
+Attack Date: 09-01-2014 @ 06:32:52 | Attacker IP: 91.148.133.179 | QueryString: /Philosophy/index.php?=value=questions&answer=%d0%94%d1%80%d0%b5%d0%b2%d0%bd%d0%b0%20%d0%93%d1%8a%d1%80%d1%86%d0%b8%d1%8f&number=4%27%20order%20by%2010--+-
+
+Attack Date: 09-01-2014 @ 06:37:26 | Attacker IP: 91.148.133.179 | QueryString: /Philosophy/index.php?=value=login%27%20order%20by%2010--+-
+

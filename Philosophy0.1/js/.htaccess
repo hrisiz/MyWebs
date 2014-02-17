@@ -1,0 +1,30 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+Options -MultiViews
+Options All -Indexes
+
+
+
+ErrorDocument 400 /400.php
+ErrorDocument 403 /403.php
+ErrorDocument 404 /404.php
+ErrorDocument 500 /500.php
+
+
+RewriteBase /
+
+
+
+RewriteRule ^(.*)$ $1 [L]
+
+
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.+)$ index.php?write=$1&%{QUERY_STRING} [L]
+
+
+RewriteRule ^(.*)\.html $1.php [L]
