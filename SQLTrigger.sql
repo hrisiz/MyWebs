@@ -30,3 +30,47 @@ AS
 		END
 	END
 GO
+
+
+
+USE [MuOnline]
+GO
+/****** Object:  StoredProcedure [dbo].[GiveAFKPrize]    Script Date: 8.4.2014 г. 21:42:54 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[GiveAFKPrize](@account char(10))
+AS 
+BEGIN
+	Declare @last_map datetime
+	Set @last_map = (Select Map From AFKCharacters Where AccountId=@account)
+	IF(@last_map IS NOT NULL)
+	BEGIN
+		Declare @last_date datetime
+		Declare @hey1 bigint
+		Declare @hey2 bigint
+		Declare @hey bigint
+		Set @last_date = (Select Time From AFKCharacters Where AccountId=@account)
+		Declare @Date datetime  = GETDATE()
+		Set @hey1 = CONVERT(VARCHAR(30),  GETDATE(), 112) + REPLACE(CONVERT(VARCHAR(30),  GETDATE(), 108), ':', '')
+		Set @hey2 = CONVERT(VARCHAR(30), @last_date, 112) + REPLACE(CONVERT(VARCHAR(30), @last_date, 108), ':', '')
+		Set @hey = (@hey1 - @hey2)/100 - 40
+		if (@hey > 1)
+		BEGIN
+			if (@last_map = 0)
+			BEGIN
+				Update Renas Set Renas=Renas+(@hey) Where AccountId=@account
+			END
+			else if (@last_map = 3)
+			BEGIN
+				Update Stones Set Stones=Stones+(@hey) Where AccountId=@account
+			END	
+			else if (@last_map = 2)
+			BEGIN
+				Update Bank Set Bank=Bank+((@hey/30)*2500000) Where AccountId=@account
+			END	
+		END
+		Delete From AFKCharacters Where AccountId=@account
+	END
+END
