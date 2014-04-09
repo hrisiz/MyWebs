@@ -3,30 +3,26 @@ $path_parts = pathinfo(__FILE__);
 preg_match("/".$path_parts['basename']."/", $_SERVER['SCRIPT_NAME'], $matches);
 if (!empty($matches[0])){header("Location: /?page=News");}
 function get_time($full){
-	$min = $full; 
-	$chas = floor($min/60); 
-	$days = floor($chas/24); 
-	$chas = $chas % 24; 
-	$min = $full % 60;
-	return "$days days $chas hours";
+	$end_time['Hours'] = floor($full/60/60);
+	$end_time['Minutes'] = floor(($full/60) - ($end_time['Hours']*60));
+	$end_time['Seconds'] = floor($full - ($end_time['Minutes']*60) - ($end_time['Hours']*60*60));
+	return $end_time;
 }
-function get_chars($check = -1,$check_value){
+function get_chars($check = -1,$check_value = -1,$another_chars){
 	global $grizismudb;
+	global $account;
 	$string = "";
-	$all_chars = $grizismudb->query("Select GameID1,GameID2,GameID3,GameID4,GameID5 From AccountCharacter Where ID='".$_SESSION['LoggedUser']."'")->fetchAll();
+	$all_chars = $grizismudb->query("Select GameID1,GameID2,GameID3,GameID4,GameID5 From AccountCharacter Where ID='$account'")->fetchAll();
 	$all_chars = array_filter($all_chars[0]);
 	$all_chars = array_unique($all_chars);
-	if(in_array($_POST['character'],$all_chars)){
+	foreach($another_chars as $another_char){
+		array_unshift($all_chars,$another_char);
+	}
+	if($_POST['character']){
 		$all_chars = array_diff($all_chars,Array($_POST['character']));
 		array_unshift($all_chars,$_POST['character']);
 	}
-	$check_is_first = 0;
 	foreach($all_chars as $char){
-		if($check_is_first == 0){
-			global $first_char;
-			$first_char = $char;
-			$check_is_first = 1;
-		}
 		if($check != -1){
 			$char_info = $grizismudb->query("Select $check From Character Where Name='$char'")->fetchAll();
 			$string .= "<option value=\"$char\">$char [".$char_info[0][0]." $check_value]</option>";
@@ -54,7 +50,8 @@ function free_slots($x,$y,$zaeti_slotove){
 } 
 
 function generate_item_hex($item_type,$item_id,$item_durability,$item_level,$item_option,$item_skill,$item_luck,$ex1,$ex2,$ex3,$ex4,$ex5,$ex6){ 
-	$serial    = $grizismudb->query("exec WZ_GetItemSerial")->fetchAll(); 
+	global  $grizismudb;
+	$serial = $grizismudb->query("exec WZ_GetItemSerial")->fetchAll(); 
 	$serial = $serial[0];
 	$BB        = 0; 
 	$CC        = $item_durability; 
@@ -102,7 +99,7 @@ function generate_item_hex($item_type,$item_id,$item_durability,$item_level,$ite
 } 
 
 
-function add_item($item_type,$item_id,$item_durability,$item_level,$item_option,$item_skill,$item_luck,$ex1,$ex2,$ex3,$ex4,$ex5,$ex6){ 
+function add_item($item_type,$item_id,$item_durability=255,$item_level=0,$item_option=0,$item_skill=0,$item_luck=0,$ex1=0,$ex2=0,$ex3=0,$ex4=0,$ex5=0,$ex6=0){ 
 	global $account;
 	global $grizismudb;
 	$items = $grizismudb->query("Select Items From warehouse Where AccountID='$account'")->fetchAll(); 
@@ -125,8 +122,7 @@ function add_item($item_type,$item_id,$item_durability,$item_level,$item_option,
 
 			$itemtype /= 2;     
 			$id=hexdec($id); 
-
-			$item_info=$grizismudb-query("select X,Y from Items where type='$item_type' and id='$item_id'")->fetchAll(); 
+			$item_info=$grizismudb->query("select X,Y from Items where type='$itemtype' and id='$id'")->fetchAll(); 
 			$item_info = $item_info[0];
 			for($k=0;$k<$item_info[0];$k++){
 				$zaeti_slotove[]=$i+$k; 
@@ -136,7 +132,7 @@ function add_item($item_type,$item_id,$item_durability,$item_level,$item_option,
 		} 
 		else $br++; 
 	} 
-	$item_info=$grizismudb-query("select X,Y from Items where type='$item_type' and id='$item_id'")->fetchAll(); 
+	$item_info=$grizismudb->query("select X,Y from Items where type='$item_type' and id='$item_id'")->fetchAll(); 
 	$item_info = $item_info[0];
 	if($br==120)
 		$svoboden_slot=0; 

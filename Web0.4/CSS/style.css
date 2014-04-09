@@ -3,7 +3,7 @@ body{
 	text-align:center;
 	margin-left:auto;
 	margin-right:auto;
-	width:1280px;
+	width:1024px;
 }
 header nav{
 	background-color:grey;
@@ -111,3 +111,19 @@ ul{
 	text-align:left;
 	padding:20px 0px 10px 20px;
 }
+dl#login_panel_user_information dd{
+	padding-left:30px;
+}
+dl#login_panel_user_information{
+	display:none;
+}
+button:active+dl#login_panel_user_information{
+	display:block;
+	position:absolute;
+	z-index:1;
+	background-color:grey;
+	padding-left:5px;
+	padding-right:5px;
+	width:191px;
+	text-align:left;
+}		

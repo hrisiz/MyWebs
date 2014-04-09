@@ -1,10 +1,13 @@
 <?php
+	ob_start();
 	session_start();
 	include "inc/sql_connect.php";
 	include "inc/server_settings.php";
 	include "inc/security.php";
 	include "inc/modules_functions.php";
 	include "inc/get_item_info.php";
+	include "inc/auction_item.php";
+	include "inc/quest_system.php";
 	if(isset($_SESSION['User'])){
 		$account = $_SESSION['User'];
 	}
@@ -20,8 +23,8 @@
 		<link  rel="stylesheet" type="text/css" href="CSS/modules.css"></link>
 		<link  rel="stylesheet" type="text/css" href="CSS/user_panel.css"></link>
 		<script type="text/JavaScript" src="JS/overlib/overlib.js"></script>
-	
-		</head>
+		<script type="text/JavaScript" src="JS/MyJS_Codes.js"></script>
+	</head>
 	<body>
 		<header>
 			<img src="images/header.png" alt="header" width="100%" height="200px"/>

@@ -7,7 +7,7 @@ if (!empty($matches[0])){header("Location: /?page=News");}
 $server['Name'] = "GrizisMu";
 $server['Version'] = "97d+99i";
 $server['Download_Files_Folder'] = "download";
-$server['Server_Files_Folder'] = "D:/MuServer";
+$server['Server_Files_Folder'] = "E:/MuServer";
 $server['Citys'] = array("Lorencia","Davias","Noria","LostTower","Exile","Stadium","Atlans","Tarkan","Icarus");
 $server['MaxLevel'] = 350;
 $server['ResetLevel'] = 340;
@@ -36,7 +36,45 @@ $server['GetZenPerStone'] = 4000000;
 
 $server['AddLuckRenas'] = 50;
 
-
+switch ($item_info['item_DB_info']['ex_type']) {
+			case 0 :
+				$options_arr = Array('Increase Mana per kill +8',
+									'Increase hit points per kill +8',
+									'Increase attacking(wizardly)speed+7',
+									'Increase wizardly damage +2%',
+									'Increase Damage +level/20',
+									'Excellent Damage Rate +10%');
+				break;
+			case 1:
+				$options_arr = Array('Increase Zen After Hunt +40%',
+								'Defense success rate +10%',
+								'Reflect damage +5%',
+								'Damage Decrease +4%',
+								'Increase MaxMana +4%',
+								'Increase MaxHP +4%');
+				break;
+		}
+		
+$options_cost = Array(	'Increase Mana per kill +8' => 100,
+						'Increase hit points per kill +8' => 110,
+						'Increase attacking(wizardly)speed+7' => 120,
+						'Increase wizardly damage +2%' => 130,
+						'Increase Damage +level/20' => 120,
+						'Excellent Damage Rate +10%' => 150,
+						'Increase Zen After Hunt +40%' => 110,
+						'Defense success rate +10%' => 140,
+						'Reflect damage +5%' => 130,
+						'Damage Decrease +4%' => 120,
+						'Increase MaxMana +4%' => 100,
+						'Increase MaxHP +4%' => 110,
+						'Luck' => 50,
+						'Per Level Add' => 15,
+						'Skill' => 0); // renas
+$jewels_cost = Array(	'Jewel of Chaos' => 1,
+						'Jewel of Soul' => 4,
+						'Jewel of Bless' => 3,
+						'Jewel of Life' => 10,
+						'Jewel of Creation' => 8);// renas
 
 
 

@@ -5,6 +5,7 @@ if (!empty($matches[0])){header("Location: /?page=News");}
 
 if($_GET['subpage'] == "Logout"){
 	unset($_SESSION['User']);
+	header("Location: /?page=Modules_Home");
 }
 
 if(isset($_POST['login'])){
@@ -14,6 +15,7 @@ if(isset($_POST['login'])){
 		echo"<p class=\"error\">Wrong user or password</p>";
 	}else{
 		$_SESSION['User']=$user;
+		$account = $_SESSION['User'];
 	}
 }
 
@@ -25,15 +27,34 @@ if(!isset($_SESSION['User'])){
 		<label for="password">Password</label>
 		<input type="password" name="password" id="password"/>
 		<input type="Submit" name="login" value="LogIn"/>
-		<button><a href="?page=Modules_Register">Register</a></button>
 	</form>
 <?php
 }else{
+$user['Online_Time'] = "2 Days 10 Hours";
+$stones = $grizismudb->query("Select Stones From Stones Where AccountId='$account'")->fetchAll();
+$user['Stones'] = $stones[0][0];
+$renas = $grizismudb->query("Select Renas From Renas Where AccountId='$account'")->fetchAll();
+$user['Renas'] = $renas[0][0];
+$bank_zen = $grizismudb->query("Select Bank From Bank Where AccountId='$account'")->fetchAll();
+$user['Bank_Zen'] = $bank_zen[0][0];
 ?>
+	<p>Welcome <?=$account?></p>
+	<button>User Information</button>
+	<dl id="login_panel_user_information">
+		<dt>Stones:</dt>
+		<dd id="user_stones"><?=number_format($user['Stones'])?></dd>
+		<dt>Renas:</dt>
+		<dd id="user_renas"><?=number_format($user['Renas'])?></dd>
+		<dt>Bank Zen:</dt>
+		<dd id="user_bank_zen"><?=number_format($user['Bank_Zen'])?></dd>
+		<dt>Online Time:</dt>
+		<dd id="user_online_time"><?=$user['Online_Time']?></dd>
+	</dl>
+	<br>
 	<ul id="user_panel_menu">
 		<li><h3>Character Options</h3>
 			<ul class="left">
-				<a href="?page=Modules_User-Panel_Reset-Character"><li>Reset Character</li></a>
+				<a href="?page=Modules_User-Panel_Reset-Character"><li>Reset Char</li></a>
 				<a href="?page=Modules_User-Panel_Add-Stats"><li>Add Stats</li></a>
 				<a href="?page=Modules_User-Panel_Bank"><li>Bank</li></a>
 			</ul>
@@ -49,30 +70,35 @@ if(!isset($_SESSION['User'])){
 				<a href="?page=Modules_User-Panel_Renas_Get-Jewels"><li>Get Jewels</li></a>
 			</ul>
 			<ul class="right">
-				<a href="?page=Modules_User-Panel_Renas_Add-Option"><li>Add Option</li></a>
-				<a href="?page=Modules_User-Panel_Renas_Up-Item-Level"><li>Up Item Level</li></a>
+				<a href="?page=Modules_User-Panel_Renas_Upgrade-Items"><li>UpItems</li></a>
 			</ul>
 		</li>
 		<li><h3>Stones Options</h3>
 			<ul class="left">
 				<a href="?page=Modules_User-Panel_Stones_Deposit-Stones"><li>Deposit</li></a>
-				<a href="?page=Modules_User-Panel_Stones_Get-Zen"><li>Get Zen</li></a>
+				<a href="?page=Modules_User-Panel_Stones_Change-Name"><li>ChangeName</li></a>
 			</ul>
 			<ul  class="right">
-				<a href="?page=Modules_User-Panel_Stones_Change-Race"><li>Change Race</li></a>
-				<a href="?page=Modules_User-Panel_Stones_Change-Name"><li>Change Name</li></a>
+				<a href="?page=Modules_User-Panel_Stones_Get-Zen"><li>Get Zen</li></a>
+				<a href="?page=Modules_User-Panel_Stones_Change-Race"><li>ChangeRace</li></a>
 			</ul>
 		</li>
 		<li><h3>Other Options</h3>
+			<ul class="center">
+				
+			</ul>
 			<ul class="left">
 				<a href="?page=Modules_User-Panel_Auction"><li>Auction</li></a>
 				<a href="?page=Modules_User-Panel_Web-Market"><li>Web Market</li></a>
+				<a href="?page=Modules_User-Panel_Web-House"><li>Web House</li>
 			</ul>
 			<ul class="right">
 				<a href="?page=Modules_User-Panel_Vote-Reward"><li>Vote Reward</li></a>
-				<a href="?page=Modules_User-Panel_Change-Password"><li>Change Password</li></a>
+				<a href="?page=Modules_User-Panel_Change-Password"><li>ChangePass</li></a>
+				<a href="?page=Modules_User-Panel_Quest-System"><li>Quests</li></a>
 			</ul>
 		</li>
+		
 	</ul>
 <?php
 }

@@ -8,12 +8,6 @@ table#character_info tr>td:nth-child(odd){
 input[type="number"]{
 	width:5em;
 }
-table.ranking a{
-	color:white;
-}
-table.ranking a:hover{
-	color:gold;
-}
 table#download tr,table#download td,table#download th{
 	padding:5px;
 }
@@ -98,4 +92,44 @@ ul#information_menu>li>ul{
 }
 ul#information_menu>li:hover>ul>li{
 	display:block;	
+}
+#get_items{
+	border:2px solid LightCyan;
+}
+#get_items td{
+	background-color:DimGray ;
+	width:30px;
+	height:30px;
+	padding:0px;
+	margin:0px;
+	border:2px solid LightCyan;
+}
+#get_items tr{
+	border:2px solid LightCyan;
+	padding:0px;
+	margin:0px;
+}
+#get_items input[type="radio"]{
+	display:none;
+}
+#get_items input[type="radio"]+label>img{
+	opacity:0.2;
+	border:1px solid grey;
+}
+#get_items input[type="radio"]:checked+label>img{
+	opacity:1;
+	border:1px solid red;
+}
+table#market_buy,table#market_buy tr, table#market_buy td ,table#market_buy th{
+	border:2px solid white;
+}
+table#market_buy td{
+	padding:5px;
+}
+input.money{
+	width:8em;
+}
+table.ranking th,td{
+	padding-left:4px;
+	padding-right:4px;
 }

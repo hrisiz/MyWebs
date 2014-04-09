@@ -10,8 +10,8 @@
 	$char_info_for_acc = $char_info_for_acc[0];
 	$all_races_short_name = Array(1=>"SM",17=>"BK",33=>"ME",48=>"MG",0=>"DW",16=>"DK",32=>"Elf");
 	$all_races_full_name = Array(1=>"SoulMaster",17=>"BladeKnight",33=>"MuseElf",48=>"MagicGladiator",0=>"DarkWizard",16=>"DarkKnight",32=>"Elf");
-	$status = Count($grizismudb->query("Select ConnectStat From MEMB_STAT Where memb___id='".$char["Name"]."' AND ConnectStat = 1")->fetchAll());
-	$char_in_game = Count($grizismudb->query("Select * From AccountCharacter Where GameIDC='$char[0]'")->fetchAll());
+	$status = Count($grizismudb->query("Select ConnectStat From MEMB_STAT Where memb___id='".$char."' AND ConnectStat = 1")->fetchAll());
+	$char_in_game = Count($grizismudb->query("Select * From AccountCharacter Where GameIDC='$char'")->fetchAll());
 	$status = "<span class='error'>Offline</span>";
 	if ($status >= 1 && $char_in_game >= 1)
 	{

@@ -6,7 +6,7 @@ if (!empty($matches[0])){header("Location: /?page=News");}
 error_reporting(E_ALL ^E_NOTICE ^E_WARNING);
 $web['connection'] = 'sqlsrv';
 
-$web['dbhost'] = 'xBeast-PC';
+$web['dbhost'] = 'WIN-QCJ6LL1IJDS';
 
 $web['database'] = 'MuOnline';
 

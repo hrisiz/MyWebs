@@ -5,8 +5,16 @@ preg_match("/".$path_parts['basename']."/", $_SERVER['SCRIPT_NAME'], $matches);
 if (!empty($matches[0])){header("Location: /?page=News");}
 	if (isset($_POST['register_now']))
 	{		
-		$is_name_exist = count($grizismudb->query("Select * From MEMB_INFO Where memb___id = '".$_POST['UserName']."'")->fetchAll());
-		$is_mail_exist = count($grizismudb->query("Select * From MEMB_INFO Where mail_addr='".$_POST['E-Mail']."'")->fetchAll());
+		$e_mail = $_POST['E-Mail'];
+		$user_name = $_POST['UserName'];
+		$pass = $_POST['Password'];
+		$rpass =$_POST['RepeatPassword'];
+		$country = $_POST['Country'];
+		$sa = $_POST['SecretAnswer'];
+		$sq = $_POST['SecretQuestion'];
+		$code = $_POST['RepeatCode'];
+		$is_name_exist = count($grizismudb->query("Select * From MEMB_INFO Where memb___id = '$user_name'")->fetchAll());
+		$is_mail_exist = count($grizismudb->query("Select * From MEMB_INFO Where mail_addr='$e-mail'")->fetchAll());
 		if ($is_name_exist > 0)
 		{
 			echo"<p class='error'>User Name Exist!</p>";
@@ -15,11 +23,11 @@ if (!empty($matches[0])){header("Location: /?page=News");}
 		{
 			echo"<p class='error'>E-Mail Exist!</p>";
 		}
-		elseif($_POST['Password'] != $_POST['RepeatPassword'])
+		elseif($pass  != $rpass )
 		{
 			echo"<p class='error'>Password and Repeat Password are not equal.</p>";
 		}
-		elseif(strlen($_POST['Password']) > 10 || strlen($_POST['UserName']) > 10 || strlen($_POST['E-Mail']) > 50 || strlen($_POST['Country']) > 50 || strlen($_POST['SecretQuestion']) > 50 || strlen($_POST['SecretAnswer']) > 50)
+		elseif(strlen($pass ) > 10 || strlen($user_name) > 10 || strlen($e-mail) > 50 || strlen($country) > 50 || strlen($sq) > 50 || strlen($sa) > 50)
 		{
 			echo"<p class='error'>Some fields are with more symbols then permitted.</p>";
 		}
@@ -27,7 +35,7 @@ if (!empty($matches[0])){header("Location: /?page=News");}
 		//{
 		//	echo"<p class='error'>Code and Repeat Code are not equal.</p>";
 		//}
-		elseif($_SESSION['Country'] == "x")
+		elseif($country == "x")
 		{
 			echo"<p class='error'>Country Field is empty.</p>";
 		}
@@ -37,14 +45,15 @@ if (!empty($matches[0])){header("Location: /?page=News");}
 			$guid[0]=$guid[0][0]+1;
 			$today = date("Y-m-d H:i:s"); 
 			$grizismudb->beginTransaction();
-			$grizismudb->exec("SET IDENTITY_INSERT MEMB_INFO ON ");
-			$xaxa = $grizismudb->exec("Insert Into MEMB_INFO (memb_guid,memb___id,memb__pwd,memb_name,sno__numb,post_code,addr_deta,tel__numb,phon_numb,mail_addr,fpas_ques,fpas_answ,job__code,appl_days,modi_days,out__days,true_days,mail_chek,bloc_code,ctl1_code,country) values ('$guid[0]','".$_POST['UserName']."','".$_POST['Password']."','".$_POST['UserName']."','Null','1234','11111','11111','11111','".$_POST['E-Mail']."','".$_POST['SecretQuestion']."','".$_POST['SecretAnswer']."','1','$today','$today','$today','$today','1','0','0','".$_POST['Country']."')");
-			$grizismudb->exec("INSERT INTO VI_CURR_INFO (ends_days,chek_code,used_time,memb___id,memb_name,memb_guid,sno__numb,Bill_Section,Bill_value,Bill_Hour,Surplus_Point,Surplus_Minute,Increase_Days )  VALUES ('2005','1',1234,'".$_POST['UserName']."','".$_POST['UserName']."','$guid[0]','111111111','6','3','6','6','$today','0' )");
-			$grizismudb->exec("INSERT INTO Bank values('".$_POST['UserName']."',0)");
-			$grizismudb->exec("INSERT INTO Stones values('".$_POST['UserName']."',0)");
-			$grizismudb->exec("INSERT INTO Renas values('".$_POST['UserName']."',0)");
-			echo"<p class='success'>Added Successfully</p>";
-			$grizismudb->commit();		
+			$check[0] = $grizismudb->exec("SET IDENTITY_INSERT MEMB_INFO ON ");
+			$check[1] = $grizismudb->exec("Insert Into MEMB_INFO (memb_guid,memb___id,memb__pwd,memb_name,sno__numb,post_code,addr_deta,tel__numb,phon_numb,mail_addr,fpas_ques,fpas_answ,job__code,appl_days,modi_days,out__days,true_days,mail_chek,bloc_code,ctl1_code,country) values ('$guid[0]','$user_name','$pass','$user_name','Null','1234','11111','11111','11111','$-mail','$sq','$sa','1','$today','$today','$today','$today','1','0','0','$country')");
+			$check[2] = $grizismudb->exec("INSERT INTO VI_CURR_INFO (ends_days,chek_code,used_time,memb___id,memb_name,memb_guid,sno__numb,Bill_Section,Bill_value,Bill_Hour,Surplus_Point,Surplus_Minute,Increase_Days )  VALUES ('2005','1',1234,'$user_name','$user_name','$guid[0]','111111111','6','3','6','6','$today','0' )");
+			if(count(array_diff ($check,array_fill(0,3,''))) != 3){
+				echo"<p class='error'>Problem with register module please connect with admin on skype:grizismu or e-mail:grizismu@abv.bg</p>";
+			}else{
+				//$grizismudb->commit();
+				echo"<p class='success'>Added Successfully</p>";
+			}
 		}	
 	}
 	$_SESSION['Code'] = rand(1000,5000);

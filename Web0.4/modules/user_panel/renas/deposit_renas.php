@@ -36,7 +36,7 @@ if (isset($_POST['DepositRenas'])){
 		$grizismudb->exec("Update Character Set Inventory=0x$inventory Where AccountId='$account' And Name='$char'");
 		echo"<p class=\"success\">You successfully added $renas Renas.</p>";
 		$user['Renas'] = $user['Renas']+$renas;
-		echo"<script>document.getElementById('Renas').innerHTML=\"Renas: ".$user['Renas']."\"</script>";
+		echo"<script>update_info('user_renas',".$user['Renas'].")</script>";
 	}
 }
 ?>

@@ -8,7 +8,10 @@
 	text-decoration:none;
 }
 a{
-	color:black;
+	color:white;
+}
+a:hover{
+	color:gold;
 }
 header nav a{
 	color:black;

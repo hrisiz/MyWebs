@@ -48,4 +48,11 @@ if (!empty($matches[0])){header("Location: /?page=News");}
 			$_SESSION[$key] = filter($value);
 		}
 	}
+	if(isset($_REQUEST))
+	{
+		foreach($_SESSION as $key => $value)
+		{
+			$_SESSION[$key] = filter($value);
+		}
+	}
 ?>
