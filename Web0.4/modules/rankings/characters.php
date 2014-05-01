@@ -20,7 +20,7 @@ if (!empty($matches[0])){header("Location: /?page=News");}
 			{
 				$guild = "-";
 			}
-			$status = Count($grizismudb->query("Select ConnectStat From MEMB_STAT Where memb___id='".$char["Name"]."' AND ConnectStat = 1")->fetchAll());
+			$status = Count($grizismudb->query("Select ConnectStat From MEMB_STAT Where memb___id='".$char["AccountId"]."' AND ConnectStat = 1")->fetchAll());
 			$char_in_game = Count($grizismudb->query("Select * From AccountCharacter Where GameIDC='$char[0]'")->fetchAll());
 			$status = "<span class='error'>Offline</span>";
 			if ($status >= 1 && $char_in_game >= 1)

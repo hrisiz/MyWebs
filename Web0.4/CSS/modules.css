@@ -39,60 +39,6 @@ div.show_item_info p{
 p.show_item_excellent_options{
 	color:#9aadd5;
 }
-
-ul#information_menu {
-	text-align:center;
-}
-ul#information_menu>li{
-	background-color:LightCyan;
-	border:2px solid white;
-	color:black;
-	display:inline-block;
-	margin-left:-7px;
-	padding-left:5px;
-	padding-right:5px;
-	font-size:1.5em;
-}
-ul#information_menu>li a{
-	color:black;
-	background-color:LightCyan;
-	padding-left:5px;
-	padding-right:5px;
-	border-radius:50px;
-}
-ul#information_menu>li:first-child{
-	border-top-left-radius:50px;
-	border-bottom-left-radius:50px;
-}
-ul#information_menu>li:last-child{
-	border-top-right-radius:50px;
-	border-bottom-right-radius:50px;
-}
-ul#information_menu li:hover{
-	background-color:white;
-	cursor:pointer;
-}
-ul#information_menu>li>ul>li{
-	display:none;
-	background-color:LightCyan;
-	border:2px solid white;
-	color:black;
-	padding-left:5px;
-	padding-right:5px;
-	position:relative;
-	left:-15px;
-}
-ul#information_menu>li>ul>li>a{
-	color:black;
-}
-ul#information_menu>li>ul{
-	position:absolute;
-	padding:0px;
-	margin:0px;
-}
-ul#information_menu>li:hover>ul>li{
-	display:block;	
-}
 #get_items{
 	border:2px solid LightCyan;
 }

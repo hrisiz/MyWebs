@@ -7,17 +7,20 @@ if (!empty($matches[0])){header("Location: /?page=News");}
 	{
 		$ip = $_SERVER['REMOTE_ADDR'];
 		$text = date("[".$ip."]".'m/d/Y H:i:s', time())." ".$text."\r\n";
-		$file = file_put_contents ('logs/'.$file_name . date('d_m_y', time()) . '.log', $text, FILE_APPEND);
+		$file = file_put_contents ('logs/'.$file_name .' ['. date('d_m_y', time()) . '].log', $text, FILE_APPEND);
 	}
 	
 	function filter($value)
 	{
-		$arr_filter = array("'",'"',';',':','%');
+		$arr_filter = array("'",'"',';',':','%','<','>','javascript');
 		foreach($arr_filter as $filter)
 		{
 			if (strpos($value, $filter))
 			{
 				make_log('sys_security', 'value: ' . $value);
+				header('Location: index.php');//
+				return NULL;
+				exit;
 			}
 		}
 		$value = trim($value);

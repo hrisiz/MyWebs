@@ -22,6 +22,11 @@
 	if(empty($acc_info['country'])){
 		$acc_info['country'] = "-";
 	}
+	$week_online_time = get_time($char_info['WeekOnlineTime']);
+	$total_online_time = get_time($char_info_for_acc['TotalTime']);
+	$week_online_time = $week_online_time['Hours'].":".$week_online_time['Minutes'].":".$week_online_time['Seconds'];
+	$total_online_time = $total_online_time['Hours'].":".$total_online_time['Minutes'].":".$total_online_time['Seconds'];
+	
 ?>
 <table id="character_info">
 <tr><td style="text-align:right;" rowspan="14" colspan="2"><img width="80%" src="images/<?=$all_races_short_name[$char_info['Class']]?>.jpg" alt="Class Picture" /></td></tr>
@@ -39,5 +44,5 @@
 <tr><td>Quest:</td><td><?=$char_info['QuestNumber'] ?></td></tr>
 <tr><td>Kills:</td><td><?=$char_info['PkCount'] ?></td></tr>
 <tr><td>Last Connect:</td><td><?=date("d/m/Y H:i", strtotime($char_info_for_acc['ConnectTM'])) ?></td><td>Last Disconnect:</td><td><?=date("d/m/Y H:i", strtotime($char_info_for_acc['DisConnectTM'])) ?></td></tr>
-<tr><td>Week Online Time:</td><td><?=get_time($char_info['WeekOnlineTime']) ?></td><td>Tatal Online Time:</td><td><?=get_time($char_info_for_acc['TotalTime'])  ?></td></tr>
+<tr><td>Week Online Time:</td><td><?=$week_online_time ?></td><td>Tatal Online Time:</td><td><?=$total_online_time?></td></tr>
 </table>

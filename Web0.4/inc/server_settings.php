@@ -130,4 +130,3 @@ $server['Accounts'] = count($grizismudb->query("Select * From MEMB_INFO")->fetch
 $server['Characters'] = count($grizismudb->query("Select * From Character Where CtlCode<>8 OR CtlCode IS NULL")->fetchAll());
 $server['Guilds'] = count($grizismudb->query("Select * From Guild")->fetchAll());
 $server['Online_Players'] = count($grizismudb->query("Select * From	MEMB_STAT Where ConnectStat=1")->fetchAll());
-?>

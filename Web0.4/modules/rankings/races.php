@@ -2,15 +2,7 @@
 $path_parts = pathinfo(__FILE__);
 preg_match("/".$path_parts['basename']."/", $_SERVER['SCRIPT_NAME'], $matches);
 if (!empty($matches[0])){header("Location: /?page=News");}
-?>
-<a href="?page=Rankings&subpage=Races&race=1"><button>Soul Master</button></a>
-<a href="?page=Rankings&subpage=Races&race=17"><button>Blade Knight</button></a>
-<a href="?page=Rankings&subpage=Races&race=33"><button>Muse Elf</button></a>
-<a href="?page=Rankings&subpage=Races&race=48"><button>Magic Gladiator</button></a><br>
-<a href="?page=Rankings&subpage=Races&race=0"><button>Dark Wizard</button></a>
-<a href="?page=Rankings&subpage=Races&race=16"><button>Dark Knight</button></a>
-<a href="?page=Rankings&subpage=Races&race=32"><button>Elf</button></a>
-<?php
+
 if(isset($_GET['race'])){
 	$all_races = Array(0,1,16,17,32,33,48);
 	$race = $_GET['race'];

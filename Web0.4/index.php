@@ -11,6 +11,7 @@
 	if(isset($_SESSION['User'])){
 		$account = $_SESSION['User'];
 	}
+	define('WEB_INDEX', TRUE);
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,14 +28,7 @@
 	</head>
 	<body>
 		<header>
-			<img src="images/header.png" alt="header" width="100%" height="200px"/>
-			<nav>
-				<a href="?page=Modules_Home">Home</a>
-				<a href="?page=Modules_Register">Register</a>	
-				<a href="?page=Modules_Download">Download</a>
-				<a href="?page=Modules_Rankings&subpage=Characters">Rankings</a>
-				<a href="?page=Modules_Information&subpage=Server">Information</a>	
-			</nav>
+			<?php include"header.php";?>
 		</header>
 		<section>
 			<div id="right">
@@ -73,7 +67,7 @@
 			</div>
 		</section>
 		<footer>
-			<p>GrizisMu &#64; All Rights Reserved</p>
+			<p>GrizisMu &copy; All Rights Reserved</p>
 		</footer>
 	</body>
 </html>

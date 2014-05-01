@@ -1,19 +1,52 @@
 body{
-	background-color:black;
+	background-color:#202020;
 	text-align:center;
 	margin-left:auto;
 	margin-right:auto;
 	width:1024px;
 }
-header nav{
+	
+header ul.nav{
+	text-align:center;
 	background-color:grey;
 	border-bottom-left-radius:25px;	
 	border-bottom-right-radius:25px;
-	min-height:50px;
+	height:40px;
+	margin:0px;
+	padding:0px;
+	padding-top:10px;
 	margin-top:-5px;
 }
-header nav a{
+header  ul.nav>li{
+	margin:0px;
+	padding:0px;
 	display:inline-block;
+}
+ul.nav>li>ul.nav{
+	display:none;
+}
+ul.nav>li:hover>ul.nav{
+	display:block;
+	padding-top:15px;
+	margin-left:-250px;
+	width:500px;
+	position:absolute;
+	border:1px double white;
+	border-top:none;
+}
+ul.nav>li:hover>ul.nav>li{
+	display:inline-block;
+	padding-left:5px;
+	padding-right:5px;
+}
+header>ul.nav>li:hover>ul.nav>li:hover>ul.nav{
+	margin-left:-50px;
+	max-width:300px;
+	min-height:55px;
+}
+header>ul.nav>li:hover>ul.nav>li:hover>ul.nav>li{
+	padding-left:3px;
+	padding-right:3px;
 }
 section>div{
 	background-color:grey;
@@ -73,8 +106,8 @@ section div#right h2{
 table{
 	margin-left:auto;
 	margin-right:auto;
+	text-align:left;
 }
-
 input,select,option,textarea{
 	background-color: #BFBDBD;
     border:solid 1px #BFBDBD;
@@ -111,19 +144,3 @@ ul{
 	text-align:left;
 	padding:20px 0px 10px 20px;
 }
-dl#login_panel_user_information dd{
-	padding-left:30px;
-}
-dl#login_panel_user_information{
-	display:none;
-}
-button:active+dl#login_panel_user_information{
-	display:block;
-	position:absolute;
-	z-index:1;
-	background-color:grey;
-	padding-left:5px;
-	padding-right:5px;
-	width:191px;
-	text-align:left;
-}		

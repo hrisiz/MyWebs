@@ -8,24 +8,22 @@
 	text-decoration:none;
 }
 a{
+	cursor:pointer;
 	color:white;
 }
 a:hover{
 	color:gold;
 }
-header nav a{
+header>ul.nav>li>a{
 	color:black;
-}
-header nav a{
 	font-weight:bold;
-	padding-top:10px;
 	font-size:1.5em;
 	font-variant:small-caps;
     letter-spacing: 0.3em; 
 	padding-left:1em;
 	padding-right:1em;
 }
-header a:hover{
+header>ul.nav>li:hover>a{
 	color:LightCyan;
 }
 h1,h2,h3,h4,h5,h6{
