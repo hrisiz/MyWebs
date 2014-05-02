@@ -1,0 +1,117 @@
+*{
+  margin:0px;
+  padding:0px;
+  color:white;
+}
+body{
+  background-color:black;
+}
+div#background-logo>div:hover{
+  -webkit-transform:rotate(360deg); /* Chrome, Safari, Opera */
+  transform:rotate(360deg);
+  background: -webkit-linear-gradient(-15deg,black,red,black); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(-15deg,black,red,black); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(-15deg,black,red,black); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(-15deg,black,red,black); /* Standard syntax (must be last) */
+}
+div#background-logo>div{
+  cursor:pointer;
+  width:50%;
+  height:90%;
+  border-radius:100%;
+  background: -webkit-linear-gradient(white,grey,grey,black); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(white,grey,grey,black); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(white,grey,grey,black); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(white,grey,grey,black); /* Standard syntax (must be last) */
+  -webkit-transition:width 0.5s, height 0.5s, -webkit-transform 0.5s; /* For Safari 3.1 to 6.0 */
+  transition:width 0.5s, height 0.5s, transform 0.5s;
+}
+div#background-logo>div>p:nth-child(4){
+  display:none;
+}
+div#background-logo>div#loading{
+  display:none;
+  background: -webkit-linear-gradient(-15deg,black,red,black); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(-15deg,black,red,black); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(-15deg,black,red,black); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(-15deg,black,red,black); /* Standard syntax (must be last) */
+  -webkit-transition:width 0s, height 0s, -webkit-transform 0s; /* For Safari 3.1 to 6.0 */
+  transition:width 0s, height 0s, transform 0s;
+}
+div#background-logo>div:hover>p:nth-child(4){
+  display:block;
+}
+header>nav>a{
+  cursor:pointer;
+  display: inline-block;
+  min-width:8em;
+  margin-left:3px;
+  margin-right:3px;
+  padding-top:50px;
+  padding-bottom:1em;
+  padding-left:0.5em;
+  padding-right:0.5em;
+  border-bottom:3px double grey;
+  border:3px double grey;
+  border-top:none;
+  height:10px;
+  border-bottom-right-radius:40px;
+  border-bottom-left-radius:40px;
+  background: -webkit-linear-gradient(to right,darkred,black,darkred); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(to right,darkred,black,darkred); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(to right,darkred,black,darkred); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right,darkred,black,darkred); /* Standard syntax (must be last) */
+}
+header>nav>a:hover{
+  background: -webkit-linear-gradient(to left,red,black,black,red); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(to left,red,black,black,red); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(to left,red,black,black,red); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to left,red,black,black,red); /* Standard syntax (must be last) */
+  position:relative;
+  top:10px;
+}
+section>div#content>h2{
+  padding-left:10px;
+  text-align:left;
+  padding-top:5px;
+}
+section div.leftSpear,section div.rightSpear,section>div#content{
+  background-color:#101010 ;
+  border:10px double darkred;
+}
+section>div#content{
+  min-height:500px;
+  width:50%;
+  border-left:none;
+  border-right:none;
+  border-radius:5%;
+  border-bottom-left-radius:20%;
+  border-bottom-right-radius:20%;
+  padding-bottom:10%;
+}
+div.rightSpear,div.leftSpear{
+  min-height:70px;
+  width:150px;
+}
+div.leftSpear{  
+  box-shadow:1px -10px 1px red;
+  -webkit-transform:skew(61deg,375deg) rotate(290deg); /* Chrome, Safari, Opera */
+  -ms-transform:skew(61deg,375deg) rotate(290deg); /* IE 9 */
+  transform:skew(61deg,375deg) rotate(290deg);
+}
+div.rightSpear{  
+  box-shadow:1px -10px 1px red;
+  -webkit-transform:skew(300deg,165deg) rotate(-290deg); /* Chrome, Safari, Opera */
+  -ms-transform:skew(300deg,165deg) rotate(-290deg); /* IE 9 */
+  transform:skew(300deg,165deg) rotate(-290deg);
+}
+
+section h3:hover+div.rightSpear,section h3:hover+div.leftSpear{
+  cursor:pointer;
+  box-shadow:1px -10px 2px gold;
+}
+input[type="submit"]{
+  border-radius:10px;
+  width:10em;
+  height:2em;
+}

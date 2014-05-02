@@ -1,0 +1,56 @@
+*{
+  font:16px Georgia, serif;
+}
+header>nav>a{
+  color:white;  
+  text-decoration:none;
+  font-variant:small-caps;
+  font-size:1.2em;
+  letter-spacing:0.1em;
+}
+div#background-logo>div{
+  color:white;
+  text-align:center;
+}
+div#background-logo>div>h1{
+  font-size:4em;
+}
+div#background-logo>div>p{
+  font-size:1.3em;
+}
+header>nav{
+  text-align:center;
+}
+section>div#content>h2{
+  font-size:2em;
+  color:white;
+  font-weight:bold;
+}
+section div#left_menu>h3,section div#right_menu>h3{
+  cursor:pointer;
+  font-size:1em;
+  color:white;  
+}
+section div#left_menu>h3{
+  -webkit-transform: rotate(32deg); /* Chrome, Safari, Opera */
+  transform: rotate(32deg);
+  width:160px;
+  text-align:center;
+}
+section div#right_menu>h3{
+  -webkit-transform: rotate(-32deg); /* Chrome, Safari, Opera */
+  transform: rotate(-32deg);
+  width:160px;
+  height:100px;
+  text-align:center;
+}
+
+input,select,textarea{
+  color:gold;
+  background-color:darkred;
+}
+input[type="submit"]:hover{
+  color:red;
+  background-color:gold;
+  font-weight:bold;
+}
