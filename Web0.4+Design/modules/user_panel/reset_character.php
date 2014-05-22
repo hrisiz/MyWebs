@@ -1,7 +1,9 @@
 <?php
-$path_parts = pathinfo(__FILE__);
-preg_match("/".$path_parts['basename']."/", $_SERVER['SCRIPT_NAME'], $matches);
-if (!empty($matches[0])){header("Location: /?page=News");}
+// if (defined('WEB_INDEX')) {header("Location: /?page=Modules_News");}
+if(!isset($_SESSION['User'])){
+  echo "<p>You should be logged in for this page.</p>";
+  return "";  
+}
 if (isset($_POST['Reset'])){
 	$char = $_POST['character'];
 	$arr = $grizismudb->query("Select cLevel,Resets,Money,Class From Character Where AccountId='$account' AND Name='$char'")->fetchAll();
@@ -41,5 +43,5 @@ if (isset($_POST['Reset'])){
 	<select name="character">
 		<?php echo get_chars("Resets","Resets");?>
 	</select><br>
-	<input type="submit" value="Reset" name="Reset"/>
+	<input onclick="startLoading()" type="submit" value="Reset" name="Reset"/>
 </form>

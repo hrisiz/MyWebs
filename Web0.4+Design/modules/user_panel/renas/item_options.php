@@ -7,6 +7,11 @@ input[type="checkbox"] {
 }
 </style>
 <?php
+// if (defined('WEB_INDEX')) {header("Location: /?page=Modules_News");}
+if(!isset($_SESSION['User'])){
+  echo "<p>You should be logged in for this page.</p>";
+  return "";  
+}
 $itemtype = $_REQUEST['TheChosenItemType'];
 $itemlevel = $_REQUEST['ItemLevel'];
 if($itemtype == 30){
@@ -47,5 +52,5 @@ switch ($itemtype) {
 <input type="checkbox" name="luck" id="luck" />[ <?=$options_cost['Luck']?> Renas ]<br>
 <label for="skill">Skill</label>
 <input type="checkbox" name="skill" id="skill" checked/>[ <?=$options_cost['Skill']?> Renas ]<br>
-<input type="submit" name="ready" value="Ready"/>
+<input onclick="startLoading()" type="submit" name="ready" value="Ready"/>
 <?php } ?>

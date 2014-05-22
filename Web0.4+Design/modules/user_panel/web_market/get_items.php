@@ -8,9 +8,10 @@
 </style>
 <br>
 <?php
-$path_parts = pathinfo(__FILE__);
-preg_match("/".$path_parts['basename']."/", $_SERVER['SCRIPT_NAME'], $matches);
-if (!empty($matches[0])){header("Location: /?page=News");}
+if(!isset($_SESSION['User'])){
+  echo "<p>You should be logged in for this page.</p>";
+  return "";  
+}
 echo"<div id=\"get_items_div\">
 	<label>Stones</label>
 	<input type=\"number\" name=\"stones\" min=\"0\" /><br>
@@ -18,7 +19,7 @@ echo"<div id=\"get_items_div\">
 	<input type=\"number\" name=\"renas\" min=\"0\" /><br>
 	<label>Zen</label>
 	<input type=\"number\" name=\"zen\" min=\"0\" /><br>
-	<input type=\"submit\" name=\"ready\" value=\"Ready\"/>
+	<input onclick=\"startLoading()\" type=\"submit\"  name=\"ready\" value=\"Ready\"/>
 </div>";
 $character = $_REQUEST['character'];
 if(!empty($character)){

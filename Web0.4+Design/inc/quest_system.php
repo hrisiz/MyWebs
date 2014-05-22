@@ -1,7 +1,5 @@
 <?php
-$path_parts = pathinfo(__FILE__);
-preg_match("/".$path_parts['basename']."/", $_SERVER['SCRIPT_NAME'], $matches);
-if (!empty($matches[0])){header("Location: /?page=News");}
+// if (defined('WEB_INDEX')) {header("Location: /?page=Modules_News");}
 function Synch_Quests(){
 	global $grizismudb;
 	global $server;
@@ -42,5 +40,8 @@ function Synch_Quests(){
 	$bigString .= "// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
 	file_put_contents ($server['Server_Files_Folder']."/DTData/QuestSystem.ini",$bigString);
 	return $file_content;
+}
+function GiveQuestPrize($quest_number,$character){
+
 }
 ?>

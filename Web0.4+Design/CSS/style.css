@@ -6,6 +6,13 @@
 body{
   background-color:black;
 }
+body>h1{
+  margin-left:-50px;
+  margin-right:-50px;
+  font-size:1em;
+  text-align:center;
+  background-color:red;
+}
 div#background-logo>div:hover{
   -webkit-transform:rotate(360deg); /* Chrome, Safari, Opera */
   transform:rotate(360deg);
@@ -42,38 +49,40 @@ div#background-logo>div:hover>p:nth-child(4){
   display:block;
 }
 header>nav>a{
-  cursor:pointer;
-  display: inline-block;
+  display:inline-block;
   min-width:8em;
-  margin-left:3px;
-  margin-right:3px;
-  padding-top:50px;
-  padding-bottom:1em;
-  padding-left:0.5em;
-  padding-right:0.5em;
-  border-bottom:3px double grey;
-  border:3px double grey;
-  border-top:none;
-  height:10px;
-  border-bottom-right-radius:40px;
-  border-bottom-left-radius:40px;
+  padding:0.5em;
+  padding-top:0px;
+  border-bottom:3px double red;
+  height:15px;
+  border-bottom-right-radius:30px;
+  border-bottom-left-radius:30px;
   background: -webkit-linear-gradient(to right,darkred,black,darkred); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(to right,darkred,black,darkred); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(to right,darkred,black,darkred); /* For Firefox 3.6 to 15 */
   background: linear-gradient(to right,darkred,black,darkred); /* Standard syntax (must be last) */
+  -webkit-transition: height 0.2s;
+  transition:height 0.2s;
 }
 header>nav>a:hover{
   background: -webkit-linear-gradient(to left,red,black,black,red); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(to left,red,black,black,red); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(to left,red,black,black,red); /* For Firefox 3.6 to 15 */
   background: linear-gradient(to left,red,black,black,red); /* Standard syntax (must be last) */
-  position:relative;
-  top:10px;
+  height:25px;
 }
 section>div#content>h2{
-  padding-left:10px;
+  padding-left:20px;
   text-align:left;
-  padding-top:5px;
+  padding-top:10px;
+  padding-bottom:20px;
+}
+section>div#content>h3{
+  padding-left:35px;
+  text-align:left;
+  padding-top:10px;
+  padding-bottom:20px;
+  margin-top:-30px;
 }
 section div.leftSpear,section div.rightSpear,section>div#content{
   background-color:#101010 ;
@@ -89,29 +98,150 @@ section>div#content{
   border-bottom-right-radius:20%;
   padding-bottom:10%;
 }
+section>div#content table>tbody>tr>td{
+  vertical-align:top;
+  border-left:1px double red;
+  border-right:1px double red;
+  border-top:1px dotted red;
+  padding:0em 0.5em;
+}
+section>div#content table>tbody>tr>td{
+  vertical-align:middle;
+}
+section>div#content table>tbody>tr:last-child>td{
+  border-bottom:1px double red;
+}
+section>div#content table>thead>tr>th{
+  border:1px double red;
+  border-bottom:none;
+}
+
+section>div#content table{
+  border-spacing: 0px;
+  margin-left:auto;
+  margin-right:auto;
+}
+section>div#content>*{
+  margin-left:auto;
+  margin-right:auto;
+}
 div.rightSpear,div.leftSpear{
   min-height:70px;
   width:150px;
 }
 div.leftSpear{  
   box-shadow:1px -10px 1px red;
-  -webkit-transform:skew(61deg,375deg) rotate(290deg); /* Chrome, Safari, Opera */
+  -webkit-transform:skew(60deg,15deg) rotate(-70deg); /* Chrome, Safari, Opera */
   -ms-transform:skew(61deg,375deg) rotate(290deg); /* IE 9 */
   transform:skew(61deg,375deg) rotate(290deg);
 }
 div.rightSpear{  
   box-shadow:1px -10px 1px red;
-  -webkit-transform:skew(300deg,165deg) rotate(-290deg); /* Chrome, Safari, Opera */
+  -webkit-transform:skew(-60deg,-15deg) rotate(70deg); /* Chrome, Safari, Opera */
   -ms-transform:skew(300deg,165deg) rotate(-290deg); /* IE 9 */
   transform:skew(300deg,165deg) rotate(-290deg);
 }
+div.rightSpear>a>p{  
+   -webkit-transform:rotate(-70deg) skew(60deg,15deg) rotate(-35deg); /*Chrome, Safari, Opera */
+  -ms-transform:rotate(-70deg) skew(60deg,15deg) rotate(-35deg); /* IE 9 */
+  transform:rotate(-70deg) skew(60deg,15deg) rotate(-35deg);
+  text-align:left;
+  font-size:2em;
+  width:300px;
+  margin-left:-85px;
+  padding-bottom:10px;
+}
+div.leftSpear>a>p{  
+   -webkit-transform:rotate(70deg) skew(-60deg,-15deg) rotate(35deg); /*Chrome, Safari, Opera */
+  -ms-transform:rotate(70deg) skew(-60deg,-15deg) rotate(35deg); /* IE 9 */
+  transform:rotate(70deg) skew(-60deg,-15deg) rotate(35deg);
+  text-align:right;
+  width:300px;
+  margin-left:-60px;
+  padding-bottom:10px;
+}
 
-section h3:hover+div.rightSpear,section h3:hover+div.leftSpear{
+div.leftSpear:hover,div.rightSpear:hover{
   cursor:pointer;
   box-shadow:1px -10px 2px gold;
 }
-input[type="submit"]{
-  border-radius:10px;
-  width:10em;
-  height:2em;
+input,select,textarea{
+  margin-top:3px;
+  margin-bottom:3px;
+}
+input[type="submit"],button{
+  border-radius:5px;
+  width:100%;
+  max-width:10em;
+}i
+input[type="submit"]:hover,button:hover{
+  border-radius:5px;
+  width:100%;
+  max-width:10em;
+} 
+*[onclick]{
+  cursor:pointer;
+}
+table td,table th{
+  padding-left:1px;
+  padding-right:1px;
+  text-align:left;
+}
+ul.hor_nav{
+  min-width:350px;
+  min-height:50px;
+}
+ul.hor_nav li{
+  width:80px;
+  height:20px;
+  border:2px solid darkred;
+  cursor:pointer;
+  display:inline-block;
+  margin:-2px -3px;
+  background-color:black;
+}
+ul.hor_nav li:hover{
+  border-bottom:2px solid red;
+}
+ul.hor_nav>li>ul.ver_nav{
+  min-width:100px;
+}
+ul.hor_nav>li>ul.ver_nav>a>li{
+  display:none;
+}
+ul.hor_nav>li:hover>ul.ver_nav>a>li{
+  display:block;
+  background-color:black;
+  border:2px double darkred;
+  width:90%;
+  margin-left:5%;
+  border-radius:8px;
+}
+ul.hor_nav>li:hover>ul.ver_nav>a>li:hover{
+  width:100%;
+  margin-left:0px;
+}
+dl {
+  padding:0em 1em;
+}
+dt {
+  display:inline;
+}
+dt:after{
+  content: ":";
+  padding:0px;
+}
+dd:after{
+  content:"\a";
+  white-space: pre;
+}
+dd{
+  padding:0px;
+  display:inline;
+}
+.sucess{
+  color:rgb(0,224,0);
+}
+.error{
+  color:rgb(224,0,0);
 }

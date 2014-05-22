@@ -2,10 +2,8 @@
   font:16px Georgia, serif;
 }
 header>nav>a{
-  color:white;  
-  text-decoration:none;
   font-variant:small-caps;
-  font-size:1.2em;
+  font-size:1em;
   letter-spacing:0.1em;
 }
 div#background-logo>div{
@@ -23,6 +21,11 @@ header>nav{
 }
 section>div#content>h2{
   font-size:2em;
+  color:white;
+  font-weight:bold;
+}
+section>div#content>h3{
+  font-size:1.5em;
   color:white;
   font-weight:bold;
 }
@@ -45,12 +48,25 @@ section div#right_menu>h3{
   text-align:center;
 }
 
-input,select,textarea{
+input,select,textarea,button,option{
   color:gold;
   background-color:darkred;
 }
-input[type="submit"]:hover{
-  color:red;
-  background-color:gold;
-  font-weight:bold;
+input[type="submit"]:hover,button:hover{
+  background-color:red;
+}
+*[onclick],a{
+  text-decoration:none;
+}
+*[onclick]:hover,a:hover{
+  color:gold;
+}
+div.rightSpear>a>p,div.leftSpear>a>p{
+  font-size:2em;
+}
+ul.ver_nav>li>ul.right>li{
+  text-align:left;
+}
+ul.ver_nav>li>ul.left>li{
+  text-align:right;
 }

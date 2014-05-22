@@ -1,7 +1,9 @@
 <?php
-$path_parts = pathinfo(__FILE__);
-preg_match("/".$path_parts['basename']."/", $_SERVER['SCRIPT_NAME'], $matches);
-if (!empty($matches[0])){header("Location: /?page=News");}
+// if (defined('WEB_INDEX')) {header("Location: /?page=Modules_News");}
+if(!isset($_SESSION['User'])){
+  echo "<p>You should be logged in for this page.</p>";
+  return "";  
+}
 if(isset($_POST['ChangeName'])){
 	$char = $_POST['character'];
 	$new_name = $_POST['name'];
@@ -46,5 +48,5 @@ if(isset($_POST['ChangeName'])){
 	</select><br>
 	<label>New Name:</label>
 	<input type="text" name="name" size="15" maxlength="10"/><br>
-	<input type="submit" name="ChangeName" value="ChangeName"/>
+	<input onclick="startLoading()" type="submit" name="ChangeName" value="ChangeName"/>
 </form>

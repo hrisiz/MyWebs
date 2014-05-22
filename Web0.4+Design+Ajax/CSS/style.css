@@ -1,0 +1,247 @@
+*{
+  margin:0px;
+  padding:0px;
+  color:white;
+}
+body{
+  background-color:black;
+}
+body>h1{
+  margin-left:-50px;
+  margin-right:-50px;
+  font-size:1em;
+  text-align:center;
+  background-color:red;
+}
+div#background-logo>div:hover{
+  -webkit-transform:rotate(360deg); /* Chrome, Safari, Opera */
+  transform:rotate(360deg);
+  background: -webkit-linear-gradient(-15deg,black,red,black); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(-15deg,black,red,black); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(-15deg,black,red,black); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(-15deg,black,red,black); /* Standard syntax (must be last) */
+}
+div#background-logo>div{
+  cursor:pointer;
+  width:50%;
+  height:90%;
+  border-radius:100%;
+  background: -webkit-linear-gradient(white,grey,grey,black); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(white,grey,grey,black); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(white,grey,grey,black); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(white,grey,grey,black); /* Standard syntax (must be last) */
+  -webkit-transition:width 0.5s, height 0.5s, -webkit-transform 0.5s; /* For Safari 3.1 to 6.0 */
+  transition:width 0.5s, height 0.5s, transform 0.5s;
+}
+div#background-logo>div>p:nth-child(4){
+  display:none;
+}
+div#background-logo>div#loading{
+  display:none;
+  background: -webkit-linear-gradient(-15deg,black,red,black); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(-15deg,black,red,black); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(-15deg,black,red,black); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(-15deg,black,red,black); /* Standard syntax (must be last) */
+  -webkit-transition:width 0s, height 0s, -webkit-transform 0s; /* For Safari 3.1 to 6.0 */
+  transition:width 0s, height 0s, transform 0s;
+}
+div#background-logo>div:hover>p:nth-child(4){
+  display:block;
+}
+header>nav>a{
+  display:inline-block;
+  min-width:8em;
+  padding:0.5em;
+  padding-top:0px;
+  border-bottom:3px double red;
+  height:15px;
+  border-bottom-right-radius:30px;
+  border-bottom-left-radius:30px;
+  background: -webkit-linear-gradient(to right,darkred,black,darkred); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(to right,darkred,black,darkred); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(to right,darkred,black,darkred); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right,darkred,black,darkred); /* Standard syntax (must be last) */
+  -webkit-transition: height 0.2s;
+  transition:height 0.2s;
+}
+header>nav>a:hover{
+  background: -webkit-linear-gradient(to left,red,black,black,red); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(to left,red,black,black,red); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(to left,red,black,black,red); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to left,red,black,black,red); /* Standard syntax (must be last) */
+  height:25px;
+}
+section>div#content>h2{
+  padding-left:20px;
+  text-align:left;
+  padding-top:10px;
+  padding-bottom:20px;
+}
+section>div#content>h3{
+  padding-left:35px;
+  text-align:left;
+  padding-top:10px;
+  padding-bottom:20px;
+  margin-top:-30px;
+}
+section div.leftSpear,section div.rightSpear,section>div#content{
+  background-color:#101010 ;
+  border:10px double darkred;
+}
+section>div#content{
+  min-height:500px;
+  width:50%;
+  border-left:none;
+  border-right:none;
+  border-radius:5%;
+  border-bottom-left-radius:20%;
+  border-bottom-right-radius:20%;
+  padding-bottom:10%;
+}
+section>div#content table>tbody>tr>td{
+  vertical-align:top;
+  border-left:1px double red;
+  border-right:1px double red;
+  border-top:1px dotted red;
+  padding:0em 0.5em;
+}
+section>div#content table>tbody>tr>td{
+  vertical-align:middle;
+}
+section>div#content table>tbody>tr:last-child>td{
+  border-bottom:1px double red;
+}
+section>div#content table>thead>tr>th{
+  border:1px double red;
+  border-bottom:none;
+}
+
+section>div#content table{
+  border-spacing: 0px;
+  margin-left:auto;
+  margin-right:auto;
+}
+section>div#content>*{
+  margin-left:auto;
+  margin-right:auto;
+}
+div.rightSpear,div.leftSpear{
+  min-height:70px;
+  width:150px;
+}
+div.leftSpear{  
+  box-shadow:1px -10px 1px red;
+  -webkit-transform:skew(60deg,15deg) rotate(-70deg); /* Chrome, Safari, Opera */
+  -ms-transform:skew(61deg,375deg) rotate(290deg); /* IE 9 */
+  transform:skew(61deg,375deg) rotate(290deg);
+}
+div.rightSpear{  
+  box-shadow:1px -10px 1px red;
+  -webkit-transform:skew(-60deg,-15deg) rotate(70deg); /* Chrome, Safari, Opera */
+  -ms-transform:skew(300deg,165deg) rotate(-290deg); /* IE 9 */
+  transform:skew(300deg,165deg) rotate(-290deg);
+}
+div.rightSpear>p{  
+   -webkit-transform:rotate(-70deg) skew(60deg,15deg) rotate(-35deg); /*Chrome, Safari, Opera */
+  -ms-transform:rotate(-70deg) skew(60deg,15deg) rotate(-35deg); /* IE 9 */
+  transform:rotate(-70deg) skew(60deg,15deg) rotate(-35deg);
+  text-align:left;
+  font-size:2em;
+  width:300px;
+  margin-left:-85px;
+  padding-bottom:10px;
+}
+div.leftSpear>p{  
+   -webkit-transform:rotate(70deg) skew(-60deg,-15deg) rotate(35deg); /*Chrome, Safari, Opera */
+  -ms-transform:rotate(70deg) skew(-60deg,-15deg) rotate(35deg); /* IE 9 */
+  transform:rotate(70deg) skew(-60deg,-15deg) rotate(35deg);
+  text-align:right;
+  width:300px;
+  margin-left:-60px;
+  padding-bottom:10px;
+}
+
+div.leftSpear:hover,div.rightSpear:hover{
+  cursor:pointer;
+  box-shadow:1px -10px 2px gold;
+}
+input,select,textarea{
+  margin-top:3px;
+  margin-bottom:3px;
+}
+input[type="submit"],button{
+  border-radius:5px;
+  width:100%;
+  max-width:10em;
+}i
+input[type="submit"]:hover,button:hover{
+  border-radius:5px;
+  width:100%;
+  max-width:10em;
+} 
+*[onclick]{
+  cursor:pointer;
+}
+table td,table th{
+  padding-left:1px;
+  padding-right:1px;
+  text-align:left;
+}
+ul.hor_nav{
+  min-width:350px;
+  min-height:50px;
+}
+ul.hor_nav>li{
+  width:80px;
+  height:20px;
+  border:2px solid darkred;
+  cursor:pointer;
+  display:inline-block;
+  margin:-2px -3px;
+  background-color:black;
+}
+ul.hor_nav>li:hover{
+  border-bottom:2px solid red;
+}
+ul.hor_nav>li>ul.ver_nav{
+  min-width:100px;
+}
+ul.hor_nav>li>ul.ver_nav>li{
+  display:none;
+}
+ul.hor_nav>li:hover>ul.ver_nav>li{
+  display:block;
+  background-color:black;
+  border:2px double darkred;
+  width:90%;
+  margin-left:5%;
+  border-radius:8px;
+}
+ul.hor_nav>li:hover>ul.ver_nav>li:hover{
+  width:100%;
+  margin-left:0px;
+}
+dl {
+  padding:0em 1em;
+}
+dt {
+  display:inline;
+}
+dt:after{
+  content: ":";
+  padding:0px;
+}
+dd:after{
+  content:"\a";
+  white-space: pre;
+}
+dd{
+  padding:0px;
+  display:inline;
+}
+.sucess{
+  color:rgb(0,224,0);
+}
+.error{
+  color:rgb(224,0,0);
+}

@@ -1,8 +1,6 @@
-
 <?php
-$path_parts = pathinfo(__FILE__);
-preg_match("/".$path_parts['basename']."/", $_SERVER['SCRIPT_NAME'], $matches);
-if (!empty($matches[0])){header("Location: /?page=News");}
+  // if (defined('WEB_INDEX')) {header("Location: /?page=Modules_News");}
+
 	if (isset($_POST['register_now']))
 	{		
 		$e_mail = $_POST['E-Mail'];
@@ -353,5 +351,5 @@ Screenshots where very little of the conversation window is shown may be deemed 
     </textarea><br>
 	<p>By registration you agree with Terms of Agreement! </p><br>
 	<br>
-	<input type="submit" name="register_now" value="Register"/>
+	<input onclick="startLoading()" type="submit" name="register_now" value="Register"/>
 </form>

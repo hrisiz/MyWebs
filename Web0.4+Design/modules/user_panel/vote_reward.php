@@ -1,8 +1,9 @@
 <?php
-$path_parts = pathinfo(__FILE__);
-preg_match("/".$path_parts['basename']."/", $_SERVER['SCRIPT_NAME'], $matches);
-if (!empty($matches[0])){header("Location: /?page=News");}
-
+// if (defined('WEB_INDEX')) {header("Location: /?page=Modules_News");}
+if(!isset($_SESSION['User'])){
+  echo "<p>You should be logged in for this page.</p>";
+  return "";  
+}
 if (isset($_POST['Vote'])){
 	$_SESSION['Voted_time'] = time();
 	$_SESSION['Voted_link_id'] = $_POST['id'];
@@ -59,7 +60,7 @@ foreach($grizismudb->query("Select * From VoteLinks") as $link){
 	}
 	else
 	{
-		echo"<input type=\"submit\" name=\"Vote\" value=\"Vote\"/>";
+		echo"<input onclick=\"startLoading()\" type=\"submit\"  name=\"Vote\" value=\"Vote\"/>";
 	}
 	echo"</form></td></tr>";
 }

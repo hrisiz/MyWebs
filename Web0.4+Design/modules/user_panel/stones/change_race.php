@@ -1,7 +1,9 @@
 <?php
-$path_parts = pathinfo(__FILE__);
-preg_match("/".$path_parts['basename']."/", $_SERVER['SCRIPT_NAME'], $matches);
-if (!empty($matches[0])){header("Location: /?page=News");}
+// if (defined('WEB_INDEX')) {header("Location: /?page=Modules_News");}
+if(!isset($_SESSION['User'])){
+  echo "<p>You should be logged in for this page.</p>";
+  return "";  
+}
 if($_POST['ChangeRace']){
 	$char = $_POST['character'];
 	$new_race = intval($_POST['race']);
@@ -38,5 +40,5 @@ if($_POST['ChangeRace']){
 	<option value="33">Muse Elf</option>
 	<option value="47">Magic Gladiator</option>
 </select><br>
-<input type="submit" value="ChangeRace" name="ChangeRace"/>
+<input onclick="startLoading()" type="submit" value="ChangeRace" name="ChangeRace"/>
 </form>

@@ -1,12 +1,8 @@
 body{
-  width:1280px;
+  width:1200px;
   position:absolute;
   left:50%;
-  margin-left:-620px;;
-}
-header>nav{
-  position:relative;
-  top:-50px;
+  margin-left:-600px;
 }
 div#background-logo{
   position:absolute;
@@ -65,7 +61,7 @@ div#background-logo>div>p:nth-child(4){
   transform:rotate(-10deg); /* Standard syntax */
 }
 section>div#content{
-  position:absolute;;
+  position:absolute;
   top:300px;
   left:25%;
   text-align:center;
@@ -73,7 +69,7 @@ section>div#content{
 section>div#left_menu{
   position:absolute;
   top:270px;
-  left:15%;
+  right:72%;
   z-index:-1;
 }
 section>div#right_menu{
@@ -82,18 +78,17 @@ section>div#right_menu{
   left:72%;
   z-index:-1;
 }
-section div#left_menu>h3{
-  position:absolute;
-  left:-20px;
-  z-index:1;
-  padding-top:20px;
-  margin-bottom:70px;
+div.leftSpear:empty{
+	position:relative;
+	top:50px;
+	left:80px;
 }
-
-section div#right_menu>h3{
+div.rightSpear:empty{
+	position:relative;
+	top:50px;
+	left:-80px;
+}
+ul>li:hover>ul.ver_nav{
   position:absolute;
-  z-index:1;
-  left:20px;
-  padding-top:35px;
-  margin-bottom:70px;
+  margin-left:-10px;
 }

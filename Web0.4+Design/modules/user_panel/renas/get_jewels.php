@@ -1,7 +1,10 @@
 <?php
-$path_parts = pathinfo(__FILE__);
-preg_match("/".$path_parts['basename']."/", $_SERVER['SCRIPT_NAME'], $matches);
-if (!empty($matches[0])){header("Location: /?page=News");}
+// if (defined('WEB_INDEX')) {header("Location: /?page=Modules_News");}
+
+if(!isset($_SESSION['User'])){
+  echo "<p>You should be logged in for this page.</p>";
+  return "";  
+}
 $inventory = $grizismudb->query("Select * From warehouse Where AccountId='Admin'")->fetchAll();
 $inventory = $inventory[0]['Items'];
 if(isset($_POST['get_jewels'])){
@@ -50,5 +53,5 @@ if(isset($_POST['get_jewels'])){
 		<option value="3">Jewel of Life[<?=$jewels_cost['Jewel of Life']?> Renas]</option>
 		<option value="4">Jewel of Creation[<?=$jewels_cost['Jewel of Creation']?> Renas]</option>
 	</select><br>
-	<input type="submit" name="get_jewels" value="Get Jewels"/>
+	<input onclick="startLoading()" type="submit" name="get_jewels" value="Get Jewels"/>
 </form>

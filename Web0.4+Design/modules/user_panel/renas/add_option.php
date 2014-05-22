@@ -1,7 +1,10 @@
 <?php
-$path_parts = pathinfo(__FILE__);
-preg_match("/".$path_parts['basename']."/", $_SERVER['SCRIPT_NAME'], $matches);
-if (!empty($matches[0])){header("Location: /?page=News");}
+// if (defined('WEB_INDEX')) {header("Location: /?page=Modules_News");}
+
+if(!isset($_SESSION['User'])){
+  echo "<p>You should be logged in for this page.</p>";
+  return "";  
+}
 
 if(isset($_POST['AddOptions'])){
 	
@@ -20,6 +23,6 @@ if(isset($_POST['AddOptions'])){
 	</div>
 	<div id="part_3">
 		
-		<input type="submit" name="add_options" value="Add Options"/>
+		<input onclick="startLoading()" type="submit" name="add_options" value="Add Options"/>
 	</div>
 </form>

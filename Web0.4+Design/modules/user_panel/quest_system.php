@@ -1,7 +1,9 @@
 <?php
-$path_parts = pathinfo(__FILE__);
-preg_match("/".$path_parts['basename']."/", $_SERVER['SCRIPT_NAME'], $matches);
-if (!empty($matches[0])){header("Location: /?page=News");}
+// if (defined('WEB_INDEX')) {header("Location: /?page=Modules_News");}
+if(!isset($_SESSION['User'])){
+  echo "<p>You should be logged in for this page.</p>";
+  return "";  
+}
 if(isset($_POST['NextQuest'])){
 	$character = $_POST['character'];
 	$char_info = $grizismudb->query("Select * From Character Where Name='$character'")->fetchAll();
@@ -26,5 +28,5 @@ if(isset($_POST['NextQuest'])){
 	<select name="character">
 		<?php echo get_chars("QuestNumber","QuestNumber");?>
 	</select><br>
-	<input type="submit" name="NextQuest" value="NextQuest"/>
+	<input onclick="startLoading()" type="submit" name="NextQuest" value="NextQuest"/>
 </form>

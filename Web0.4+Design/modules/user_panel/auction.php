@@ -1,7 +1,9 @@
 <?php
-$path_parts = pathinfo(__FILE__);
-preg_match("/".$path_parts['basename']."/", $_SERVER['SCRIPT_NAME'], $matches);
-if (!empty($matches[0])){header("Location: /?page=News");}
+// if (defined('WEB_INDEX')) {header("Location: /?page=Modules_News");}
+if(!isset($_SESSION['User'])){
+  echo "<p>You should be logged in for this page.</p>";
+  return "";  
+}
 $auction = $grizismudb->query("Select Top 1 * From Auction order by ID desc")->fetchAll();
 if(count($auction) > 0){
 	$auction = $auction[0];
@@ -57,7 +59,7 @@ if(count($auction) > 0){
 		<label for="money">Money</label>
 		<input id="money" class="money" type="number" name="bet_money" value="<?=$biggest_bet+1?>" min="<?=$biggest_bet+1?>"/>
 		<br>
-		<input type="submit" name="Bet" value="Bet"/>
+		<input onclick="startLoading()" type="submit" name="Bet" value="Bet"/>
 	</form>
 
 <?php

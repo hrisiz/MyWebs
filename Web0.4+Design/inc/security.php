@@ -1,8 +1,11 @@
 <?php
-$path_parts = pathinfo(__FILE__);
-preg_match("/".$path_parts['basename']."/", $_SERVER['SCRIPT_NAME'], $matches);
-if (!empty($matches[0])){header("Location: /?page=News");}
-
+// if (defined('WEB_INDEX')) {header("Location: /?page=Modules_News");}
+	if(isset($_SESSION['last_session_request']) && $_SESSION['last_session_request'] > time()-2){
+    header("location: flood.html");
+    exit;
+	}
+	$_SESSION['last_session_request'] = time();
+	
 	function make_log($file_name, $text)
 	{
 		$ip = $_SERVER['REMOTE_ADDR'];
