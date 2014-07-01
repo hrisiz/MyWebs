@@ -1,5 +1,14 @@
 <?php
 // if (defined('WEB_INDEX')) {header("Location: /?page=Modules_News");}
+if(isset($_GET['page_count'])){
+  $page_count = $_GET['page_count'];
+  if($page_count < 0){
+     $page_count = 0;
+  }
+}else{
+  $page_count = 0;
+}
+$count_per_page = 10;
 if(isset($_REQUEST['race'])){
 	$all_races = Array(0,1,16,17,32,33,48);
 	$race = $_REQUEST['race'];
@@ -14,7 +23,7 @@ if(isset($_REQUEST['race'])){
   <tbody>
   ";
 	if(in_array($race ,$all_races)){
-		$chars = $grizismudb->query("Select Top 100  * From Character Where Class=$race order by Resets desc,cLevel desc,Name")->fetchAll();
+		$chars = $grizismudb->query("Select  * From Character Where Class=$race order by Resets desc,cLevel desc,Name OFFSET ".$page_count*$count_per_page." ROWS FETCH NEXT $count_per_page ROWS ONLY")->fetchAll();
 		$i = 1;
 		$all_races_name = Array(1=>"SM",17=>"BK",33=>"ME",48=>"MG",0=>"DW",16=>"DK",32=>"Elf");
 		foreach($chars as $char){
@@ -35,3 +44,11 @@ if(isset($_REQUEST['race'])){
   </table>";
 }
 ?>
+<?php
+  if($page_count > 0 ){
+?>
+<a href="/?page=Modules_Ranking&subpage=Races&race=<?=$_GET['race']?>&page_count=<?=$page_count-1?>"><< Previous</a>
+<?php
+  }
+?>
+<a href="/?page=Modules_Ranking&subpage=Races&race=<?=$_GET['race']?>&page_count=<?=$page_count+1?>">Next >></a>

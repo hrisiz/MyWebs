@@ -11,10 +11,9 @@
 	<li class="without_type">Bonus points for every bigger level than 340 : <?=$server['BonusPointsPerLevel']?> Points</li>
 	<li class="without_type">Reset Zen:<?=number_format($server['ZenForReset'])?>Zen</li>
 	<li class="without_type">Reset Level:<?=$server['ResetLevel']?></li>
-	
-	<li class="without_type"><h3>Reset Points</h3></li>
-	<li class="without_type">DK AND BK Points:<?=$server['BKPoints']?></li>
-	<li class="without_type">ELF AND ME Points:<?=$server['MEPoints']?></li>
-	<li class="without_type">DW AND SM Points:<?=$server['SMPoints']?></li>
-	<li class="without_type">MG Points:<?=$server['MGPoints']?></li>
+	<li class="without_type">Reset Points:</li>
+	<li class="without_type">DK/BK:<?=$server['Points'][17]?>/<?=$server['Points'][18]?></</li>
+	<li class="without_type">ELF/ME:<?=$server['Points'][33]?>/<?=$server['Points'][34]?></</li>
+	<li class="without_type">DW/SM:<?=$server['Points'][0]?>/<?=$server['Points'][1]?></li>
+	<li class="without_type">MG:<?=$server['Points'][48]?></li>
 </ul>

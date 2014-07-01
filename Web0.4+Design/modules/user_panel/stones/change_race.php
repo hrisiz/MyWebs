@@ -23,8 +23,8 @@ if($_POST['ChangeRace']){
 		$grizismudb->exec("Update Character Set Class='$new_race' Where AccountId='$account' AND Name='$char'");
 		$grizismudb->exec("Update Stones Set Stones = Stones-".$server['ChangeRaceStones']." Where AccountId='$account'");
 		echo"<p class=\"success\">Successfully</p>";
-		$user['Stones'] = $check_your_stones[0][0] - $server['ChangeRaceStones'];
-		echo"<script>document.getElementById('Stones').innerHTML=\"Stones:".$user['Stones']."\"</script>";
+		// $user['Stones'] = $check_your_stones[0][0] - $server['ChangeRaceStones'];
+		// echo"<script>document.getElementById('Stones').innerHTML=\"Stones:".$user['Stones']."\"</script>";
 	}
 }
 ?>

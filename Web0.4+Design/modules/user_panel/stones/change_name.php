@@ -36,8 +36,8 @@ if(isset($_POST['ChangeName'])){
 		$grizismudb->exec("Update AccountCharacter Set $char_place='$new_name'$GameIDC Where Id='$account'");
 		$grizismudb->exec("Update Stones Set Stones = Stones-".$server['ChangeNameStones']." Where AccountId='$account'");
 		echo"<p class=\"success\">Successfully</p>";
-		$user['Stones'] = $check_your_stones[0][0] - $server['ChangeNameStones'];
-		echo"<script>document.getElementById('Stones').innerHTML=\"Stones:".$user['Stones']."\"</script>";
+		// $user['Stones'] = $check_your_stones[0][0] - $server['ChangeNameStones'];
+		// echo"<script>document.getElementById('Stones').innerHTML=\"Stones:".$user['Stones']."\"</script>";
 	}
 }
 ?>

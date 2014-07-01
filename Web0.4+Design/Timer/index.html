@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>GrizisMu</title>
+		<meta charset="UTF-8"/>
+    <script type="text/javascript">
+      function timer(s,id){
+        if(s != 0){
+          print_d = Math.floor(s/24/60/60);
+          print_h = Math.floor((s/60/60) - (print_d*24));
+          print_m = Math.floor((s/60) - (print_h*60) - (print_d*24*60));
+          print_s = Math.floor(s - (print_m*60) - (print_h*60*60) - (print_d*24*60*60));
+          document.getElementById(id).innerHTML = "<h2>"+print_d + " Days " +print_h+" Hours "+print_m+" Minutes "+print_s+" Seconds"+"</h2>"
+        }else{
+          location.reload();
+        }
+      }
+      function start_timer(){
+        date=new Date();
+        end_date = new Date("July 17, 2014 20:00:00 GMT+0300");
+        time = new Date(end_date.getTime()-date.getTime());
+        
+        start_timer = parseInt(time.getTime()/1000);
+        // document.getElementById("timer").innerHTML = start_timer/24/60/60
+        timer(start_timer,"timer");
+        setInterval(function(){timer(start_timer--,"timer");},1000);
+      }
+    </script>
+		<style>
+      *{
+        font:16px Georgia, serif;
+        padding:0px;
+        margin:0px;
+      }
+      body{
+        background-color:black;
+        text-align:center;
+        background-image:url('logo11.jpg'); 
+        background-repeat:no-repeat; 
+        background-attachment:fixed;
+        background-position:center;
+      }
+      h1{
+        font-size:6em;
+        color:white;
+        font-weight:bold;
+      }
+      #timer>h2{
+        width:100%;
+        font-size:5em;
+        vertical-align:middle;
+        color:white;
+        font-weight:bold;
+      }
+      h3{
+        font-size:4em;
+        color:white;
+        font-weight:bold;
+      }
+      h4{
+        font-size:3em;
+        color:white;
+      }
+      @media screen and (max-width: 600px){
+        *{
+          font-size:3px; 
+        }
+      }
+      @media screen and (max-width: 800px) and (min-width:601px){
+        *{
+          font-size:7px; 
+        }
+      }
+      @media screen and (max-width: 1024px) and (min-width:801px){
+        *{
+          font-size:9px; 
+        }
+      }
+      @media screen and (max-width: 1280px) and (min-width:1025px){
+        *{
+          font-size:11px; 
+        }
+      }
+    </style>
+  </head>
+	<body onload="start_timer()">
+    <h1>Coming soon!!!</h1>
+		<div id="timer"><h2></h2></div>
+    <h3>GrizisMu</h3>
+	</body>
+</html>

@@ -20,6 +20,7 @@ if(isset($_POST['ready'])){
 	}else{
 		echo "<p class=\"error\">Please choose a character.</p>";
 	}
+  $renas = $grizismudb->query("Select * From Renas Where AccountId='$account'")->fetchAll();
 	if(substr($inventory,$item*20,4) == "FFFF"){
 		echo"<p class=\"error\">This isn't your item</p>";
 	}else{
@@ -59,7 +60,7 @@ if(isset($_POST['ready'])){
 			echo"<p class=\"error\">Your Account is Online.</p>";
 		}elseif(in_array($options_arr[$option],$item_info['excellent_options']) && $option >= 0 && $option <= 5){
 			echo"<p class=\"error\">This option already exist for this item.</p>";
-		}elseif($all_cost > $user['Renas']){
+		}elseif($all_cost > $renas[0]['Renas']){
 			echo"<p class=\"error\">You don't have enough renas.</p>";
 		}elseif($level > 11){
 			echo"<p class=\"error\">11 is maximum item level.</p>";
@@ -87,9 +88,12 @@ if(isset($_POST['ready'])){
 				$coutner++;
 			} 
 			$grizismudb->exec("Update Renas Set Renas=Renas-$all_cost Where AccountId='$account'");
-			$grizismudb->exec("Update Warehouse Set Items=0x".substr_replace($inventory,$new_item,$item*20,20)." Where AccountId='$account'");
-			$user['Renas'] = $user['Renas'] - $all_cost;
-			echo"<script>update_info('user_renas',".$user['Renas'].")</script>";
+			if($character == "Warehouse"){
+        $grizismudb->exec("Update Warehouse Set Items=0x".substr_replace($inventory,$new_item,$item*20,20)." Where AccountId='$account'");
+      }elseif(!empty($character)){
+        $grizismudb->exec("Update Warehouse Set Inventory=0x".substr_replace($inventory,$new_item,$item*20,20)." Where AccountId='$account' AND Character='$character'");
+      }
+      $user['Renas'] = $user['Renas'] - $all_cost;
 			echo"<p class=\"success\">You successfully upgraded your ".$item_info['name']."</p>";
 		}
 	}
@@ -97,7 +101,7 @@ if(isset($_POST['ready'])){
 ?>
 <form method="POST">
 	<div id="items"></div>
-	<select onchange='get_file("items","Modules_User-Panel_Renas_Get-Items&character="+this.options[this.selectedIndex].value)' name="character">
+	<select onchange='loadAjaxPage("Modules_User-Panel_Renas_Get-Items&character="+this.options[this.selectedIndex].value,"items")' name="character">
 		<option value="">--Select--</option>
 		<?php echo get_chars(-1,-1,Array("Warehouse"));?>
 	</select><br>

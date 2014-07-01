@@ -18,10 +18,10 @@ if(isset($_POST['GetZenFromStones'])){
 		$grizismudb->exec("Update Bank Set Bank=Bank+$get_money Where AccountId='$account'");
 		$grizismudb->exec("Update Stones Set Stones=Stones-$stones Where AccountId='$account'");
 		echo"<p class=\"success\">Successfully</p>";
-		$user['Stones'] = $user['Stones']-$stones;
-		$user['BankZen'] = number_format($user['BankZen'] + $get_money);
-		echo"<script>document.getElementById('Stones').innerHTML=\"Stones:".$user['Stones']."\"</script>";
-		echo"<script>document.getElementById('BankZen').innerHTML=\"Bank Zen:".$user['BankZen']."\"</script>";
+		// $user['Stones'] = $user['Stones']-$stones;
+		// $user['BankZen'] = number_format($user['BankZen'] + $get_money);
+		// echo"<script>document.getElementById('Stones').innerHTML=\"Stones:".$user['Stones']."\"</script>";
+		// echo"<script>document.getElementById('BankZen').innerHTML=\"Bank Zen:".$user['BankZen']."\"</script>";
 	}
 }
 ?>

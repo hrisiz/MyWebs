@@ -1,27 +1,16 @@
-@media screen and (max-width: 800px){
-  body{
-    width:700px;
-    margin-left:-350px;;
-  }
-  *{
-    font:12px Georgia, serif;
-  }
-}
-@media screen and (max-width: 900px) and (min-width:800px){
-  body{
+
+@media screen and (max-width: 900px){
+  body>div.body{
     width:900px;
-    margin-left:-450px;;
   }
 }
 @media screen and (max-width: 1024px) and (min-width:900px){
-  body{
+  body>div.body{
     width:1000px;
-    margin-left:-500px;;
   }
 }
 @media screen and (min-width: 1280px){
-  body{
+  body>div.body{
     width:1200px;
-    margin-left:-600px;;
   }
 }

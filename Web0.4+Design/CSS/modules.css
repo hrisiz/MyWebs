@@ -27,6 +27,7 @@ table#download tr,table#download td,table#download th{
 }
 ul.information{
 	text-align:center;
+  list-style-type:none;
 }
 table.information tr,table.information td,table.information th{
 	padding:5px;
@@ -86,4 +87,40 @@ input.money{
 table.ranking th,td{
 	padding-left:4px;
 	padding-right:4px;
+}
+td>div.hidden_characters{
+  display:none;
+  width:80px;
+  margin-left:-10px;
+  min-height:50px;
+}
+td:hover>div.hidden_characters{
+  display:block;
+  position:absolute;
+  background:black;
+  border:1px solid red;
+  text-align:center;
+}
+ul{
+  list-style:none;
+}
+div.news_content{
+  display:none;
+}
+div#character_info>table{
+  padding:0px;
+  width:50%;
+  float:left;
+}
+div#character_info>table+dl{
+  padding-right:3%;
+  padding-left:1%;  
+  width:46%;
+  float:left;
+  text-align:left
+}
+div#character_info>table+dl+dl{
+  clear:left;
+  width:100%;
+  text-align:left;
 }

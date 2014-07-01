@@ -36,14 +36,14 @@ function get_item_info($item_code){
 		if ($options>=128){
 			$options = $options-128;
 			if($item_info['skill'] == 1){
-				$item['skill']="This weapon has a special skill<br>";
+				$item['skill']="This weapon has a special skill";
 			}
 		}
 		$item['level'] = floor($options/8);
 		$options = $options - ($item['level']*8);
 		$item['luck'] = "";
 		if ($options>=4){
-			$item['luck']="Luck (success rate of jewel of soul +25%)<br>Luck (critical damage rate +5%)";
+			$item['luck']="<br>Luck (success rate of jewel of soul +25%)<br>Luck (critical damage rate +5%)";
 			$options-=4;
 		}
 		switch ($item_info['ex_type']) {

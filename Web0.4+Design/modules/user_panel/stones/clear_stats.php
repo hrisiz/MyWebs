@@ -19,8 +19,8 @@ if(isset($_POST['ClearStats'])){
 		$grizismudb->exec("Update Stones Set Stones=Stones-".$server['ClearStatsStones']." Where AccountId='$account'");
 		$grizismudb->exec("Update Character Set LevelUpPoint=LevelUpPoint+Strength+Dexterity+Vitality+Energy-100,Strength=".$server['Points']['start'].",Dexterity=".$server['Points']['start'].",Vitality=".$server['Points']['start'].",Energy=".$server['Points']['start']." Where Name='$char' AND AccountId='$account'");
 		echo"<p class=\"success\">Successfully</p>";
-		$user['Stones'] = $check_your_stones[0][0] - $server['ClearStatsStones'];
-		echo"<script>document.getElementById('Stones').innerHTML=\"Stones:".$user['Stones']."\"</script>";
+		// $user['Stones'] = $check_your_stones[0][0] - $server['ClearStatsStones'];
+		// echo"<script>document.getElementById('Stones').innerHTML=\"Stones:".$user['Stones']."\"</script>";
 	}
 }
 ?>

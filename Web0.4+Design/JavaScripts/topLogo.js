@@ -1,7 +1,6 @@
 function startLoading(){
   x=document.getElementById("loading");
   x.innerHTML = "<p>Server is</p><h1>Loading...</h1><p>Please wait.</p><p>Click to stop.</p>";
-  x.style.display="block";
   x=document.getElementById("loading");
   x.onclick = function() { 
     if(navigator.appName == "Microsoft Internet Explorer")
@@ -17,7 +16,19 @@ function startLoading(){
   if(typeof waitToBack != 'undefined'){
     clearTimeout(waitToBack);
   }
-  refreshIntervalId = setInterval(function(){changeLoading()},50);
+  refreshIntervalId = setInterval(function(){changeLoading("black,red,black",5)},50);
+}
+function startLogo(text,color){
+  x=document.getElementById("loading");
+  x.innerHTML = text;
+  n=-15;
+  if(typeof refreshIntervalId != 'undefined'){
+    clearInterval(refreshIntervalId);
+  }
+  if(typeof waitToBack != 'undefined'){
+    clearTimeout(waitToBack);
+  }
+  refreshIntervalId = setInterval(function(){changeLoading(color,2)},50);
 }
 function successLoading(error,hover,onclick)
 {
@@ -61,14 +72,18 @@ function backToGrizisMuLogo(){
   if(typeof refreshIntervalId != 'undefined'){
     clearInterval(refreshIntervalId);
   }
-  document.getElementById("loading").style.display="none"
-  document.getElementById("logo").style.display="block"
+  x = document.getElementById("loading")
+  x.style.background="-webkit-linear-gradient(white,grey,grey,black)"
+  x.style.background="-o-linear-gradient(white,grey,grey,black)"
+  x.style.background="-moz-linear-gradient(white,grey,grey,black)"
+  x.style.background="linear-gradient(white,grey,grey,black)" 
+  x.innerHTML="<p>The New World</p><h1>GrizisMu</h1><p>Online</p><p>Welcome to GrizisMu</p>"
 }
-function changeLoading(){ 
+function changeLoading(colors,init_number){ 
   x=document.getElementById("loading");
-  n = n + 5
-  x.style.background="-webkit-linear-gradient("+n+"deg,black,red,black)"
-  x.style.background="-o-linear-gradient("+n+"deg,black,red,black)"
-  x.style.background="-moz-linear-gradient("+n+"deg,black,red,black)"
-  x.style.background="linear-gradient("+n+"deg,black,red,black)"
+  n = n + init_number
+  x.style.background="-webkit-linear-gradient("+n+"deg,"+colors+")"
+  x.style.background="-o-linear-gradient("+n+"deg,"+colors+")"
+  x.style.background="-moz-linear-gradient("+n+"deg,"+colors+")"
+  x.style.background="linear-gradient("+n+"deg,"+colors+")"
 }

@@ -50,8 +50,6 @@
       <dd><?=$char_info['Resets'] ?></dd>
     <dt>Bonus Points</dt>
       <dd><?=intval($char_info['BonusPoints']) ?></dd>
-    <dt>Quest</dt>
-      <dd><?=$char_info['QuestNumber'] ?></dd>
     <dt>Kills</dt>
       <dd><?=$char_info['PkCount'] ?></dd>
   </dl>

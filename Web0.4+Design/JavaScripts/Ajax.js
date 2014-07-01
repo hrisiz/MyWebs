@@ -19,9 +19,9 @@ function loadAjaxPage(page,id){
 		if (xmlhttp.readyState==4 && xmlhttp.status==200)
 		{
 			document.getElementById(id).innerHTML=xmlhttp.responseText;
-      if(!page.match(new RegExp('Get-Items'))){
-        window.history.pushState("state","title", "?page="+page) ;
-      }
+      // if(!page.match(new RegExp('Get-Items'))){
+        // window.history.pushState("state","title", "?page="+page) ;
+      // }
       successLoading("Page was successfully load.","Everything is OK","#")
 		}
 		if (xmlhttp.readyState==4 && xmlhttp.status==403)

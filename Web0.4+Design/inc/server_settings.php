@@ -2,7 +2,7 @@
 <?php
 // if (defined('WEB_INDEX')) {header("Location: /?page=Modules_News");}
 
-
+$server['AdminsIps'] = array('127.0.0.1','78.83.158.151');
 $server['Name'] = "GrizisMu";
 $server['Version'] = "97d+99i";
 $server['Download_Files_Folder'] = "download";
@@ -18,14 +18,15 @@ $server['ClearStatsZen'] = 1;
 $server['ClearPKZen'] = 50000000;
 $server['AddStatZen'] = 1000000000;
 $server['BonusPointsPerLevel'] = 5;
-$server['Points']['start'] = 25; //DW
-$server['Points']['0'] = 500; //DW
-$server['Points']['1'] = 500; //SM
-$server['Points']['17'] = 700;//DK
-$server['Points']['18'] = 700;//BK
-$server['Points']['33'] = 550;//ELF
-$server['Points']['34'] = 550;//ME
-$server['Points']['48'] = 600;//MG
+$server['Points']['start'] = 25; //start
+$server['Points'][0] = 500; //DW
+$server['Points'][1] = 500; //SM
+$server['Points'][17] = 700;//DK
+$server['Points'][18] = 700;//BK
+$server['Points'][33] = 550;//ELF
+$server['Points'][34] = 550;//ME
+$server['Points'][48] = 600;//MG
+
 
 $server['ChangeNameStones'] = 1;
 $server['ChangeRaceStones'] = 1;

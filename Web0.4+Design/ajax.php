@@ -1,4 +1,9 @@
 <?php
+	if(isset($_SESSION['last_session_request']) && $_SESSION['last_session_request'] > time()-5){
+    header("location: flood.html");
+    exit;
+	}
+	$_SESSION['last_session_request'] = time();
 	session_start();
 	include "inc/sql_connect.php";
 	include "inc/server_settings.php";
@@ -16,12 +21,6 @@
 		$page = str_replace("-","_",$page);
 		$page = strtolower($page);
 		$page = $page.".php";
-    if($name != "Get Items"){
-      if(isset($_SESSION['User'])){
-        include "modules/user_options.php";
-      }
-      echo"<h2>$name</h2>";
-    }
 		if (file_exists($page)) {
       include $page;
 		}else{

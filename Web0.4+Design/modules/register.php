@@ -49,7 +49,7 @@
 			if(count(array_diff ($check,array_fill(0,3,''))) != 3){
 				echo"<p class='error'>Problem with register module please connect with admin on skype:grizismu or e-mail:grizismu@abv.bg</p>";
 			}else{
-				//$grizismudb->commit();
+				$grizismudb->commit();
 				echo"<p class='success'>Added Successfully</p>";
 			}
 		}	

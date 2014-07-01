@@ -7,7 +7,6 @@ if(!isset($_SESSION['User'])){
   return "";  
 }
 echo"<div id=\"choose_item_options\">
-
 </div>";
 $character = $_REQUEST['character'];
 if(!empty($character)){
@@ -40,12 +39,12 @@ if(!empty($character)){
 			
 			?>
 				<td colspan="<?=$item_info['width']?>" rowspan="<?=$item_info['height']?>">
-				<?php if(count($item_info['excellent_options']) > 0 && $item_info['ex_type'] != 4 && $item_info['ex_type'] != 30){?>
-					<input type="radio" name="item" value="<?=$item_number?>"  onclick='get_file("choose_item_options","Modules_User-Panel_Renas_Item-Options&TheChosenItemType=<?=($item_info['item_DB_info']['ex_type'])?>&ItemLevel=<?=($item_info['level'])?>")' id="item<?=$rows?><?=$cols?>"/>
+				<?php if(count($item_info['excellent_options']) == 1 && $item_info['ex_type'] <= 2 && $item_info['ex_type'] != 30){?>
+					<input type="radio" name="item" value="<?=$item_number?>"  onclick='loadAjaxPage("Modules_User-Panel_Renas_Item-Options&TheChosenItemType=<?=($item_info['item_DB_info']['ex_type'])?>&ItemLevel=<?=($item_info['level'])?>","choose_item_options")' id="item<?=$rows?><?=$cols?>"/>
 					<label onmouseover="return overlib('<?=$onmouseover?>');" onmouseout="return nd()" for="item<?=$rows?><?=$cols?>">
 				<?php }else{ ?>
 					<input type="radio"/>
-					<label onmouseover="return overlib('This item cannot be upgraded.');" onmouseout="return nd()">
+					<label onmouseover="return overlib('This item cannot be upgrade.<?=$onmouseover?>');" onmouseout="return nd()">
 				<?php } ?>	
 					 	<img width="<?=($item_info['width']*30)?>px" height="<?=($item_info['height']*30) ?>px" src="images/items/<?=$item_info['image']?>"/>
 					</label>

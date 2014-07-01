@@ -27,8 +27,8 @@ if (isset($_POST['GetZen']))
 	}else{
 		$grizismudb->exec("Update Character Set Money=Money+$money Where Name='$char' AND AccountId='$account'");
 		$grizismudb->exec("Update Bank Set Bank = Bank - $money Where AccountId='$account'");
-		echo"<p class=\"success\">Successfully</p>
-		<script>document.getElementById(\"BankZen\").innerHTML=\"BankZen: ".number_format($bank_money[0][0]-$money)."\"</script>";
+		echo"<p class=\"success\">Successfully</p>";
+		// echo"<script>document.getElementById(\"BankZen\").innerHTML=\"BankZen: ".number_format($bank_money[0][0]-$money)."\"</script>";
 	}
 }
 if (isset($_POST['PutZen']))
@@ -57,8 +57,8 @@ if (isset($_POST['PutZen']))
 		}
 		$grizismudb->exec($bank_moneya);
 		$grizismudb->exec("Update Character Set Money=Money-$money Where AccountId='$account' AND Name='$char'");
-		echo"<p class=\"success\">Successfully</p>
-		<script>document.getElementById(\"BankZen\").innerHTML=\"Bank Zen: ".number_format($bank_money[0][0]+$money)."\"</script>";
+		echo"<p class=\"success\">Successfully</p>";
+		// echo"<script>document.getElementById(\"BankZen\").innerHTML=\"Bank Zen: ".number_format($bank_money[0][0]+$money)."\"</script>";
 	}
 }
 ?>

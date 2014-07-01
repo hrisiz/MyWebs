@@ -2,14 +2,15 @@
 // // // // // if (defined('WEB_INDEX')) {header("Location: /?page=Modules_News");}
 if(isset($_POST['login'])){
 	$user = $_POST['user'];
-	$check_acc = $grizismudb->query("Select * From MEMB_INFO Where memb___id='$user' AND memb__pwd='".$_POST['password']."'")->fetchAll();
+	$check_acc = $grizismudb->query("Select memb___id From MEMB_INFO Where memb___id='$user' COLLATE SQL_Latin1_General_CP1_CS_AS AND memb__pwd='".$_POST['password']."'")->fetchAll();
 	if(count($check_acc) <= 0){
 		echo"<p class=\"error\">Wrong user or password</p>";
 	}else{
 		$_SESSION['User']=$user;
 		$account = $_SESSION['User'];
+    sleep(1);
+    header("Location: ?page=Modules_User-Information"); 
 	}
-  header("Location: ?page=Modules_User-Information"); 
 }
 if(!isset($_SESSION['User'])){
 ?>

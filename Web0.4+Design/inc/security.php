@@ -1,11 +1,10 @@
 <?php
 // if (defined('WEB_INDEX')) {header("Location: /?page=Modules_News");}
-	if(isset($_SESSION['last_session_request']) && $_SESSION['last_session_request'] > time()-2){
-    header("location: flood.html");
-    exit;
-	}
+  if(isset($_SESSION['last_session_request']) && $_SESSION['last_session_request'] > time()-2){
+      header("location: flood.html");
+      exit;
+  }
 	$_SESSION['last_session_request'] = time();
-	
 	function make_log($file_name, $text)
 	{
 		$ip = $_SERVER['REMOTE_ADDR'];
@@ -13,22 +12,27 @@
 		$file = file_put_contents ('logs/'.$file_name .' ['. date('d_m_y', time()) . '].log', $text, FILE_APPEND);
 	}
 	
-	function filter($value)
+	function filter($value,$save=0)
 	{
-		$arr_filter = array("'",'"',';',':','%','<','>','javascript');
-		foreach($arr_filter as $filter)
-		{
-			if (strpos($value, $filter))
-			{
-				make_log('sys_security', 'value: ' . $value);
-				header('Location: index.php');//
-				return NULL;
-				exit;
-			}
-		}
-		$value = trim($value);
-		$value = htmlspecialchars($value);
-		return $value;
+    if($save){
+      $value = preg_replace('/\'/',"''",$value);
+    }
+    else{
+      $arr_filter = array("'",'"',';',':','%','<','>','javascript');
+      foreach($arr_filter as $filter)
+      {
+        if (strpos($value, $filter))
+        {
+          make_log('sys_security', 'value: ' . $value);
+          header('Location: index.php');//
+          return NULL;
+          exit;
+        }
+      }
+      $value = trim($value);
+      $value = htmlspecialchars($value);
+    }
+    return $value;
 	}
 	
 	if(isset($_GET))
@@ -43,7 +47,10 @@
 	{
 		foreach($_POST as $key => $value)
 		{
-			$_POST[$key] = filter($value);
+      if(!preg_match('/^Save/',$key))
+        $_POST[$key] = filter($value);
+      else
+        $_POST[$key] = filter($value,1);
 		}
 	}
 	
@@ -54,11 +61,11 @@
 			$_SESSION[$key] = filter($value);
 		}
 	}
-	if(isset($_REQUEST))
-	{
-		foreach($_SESSION as $key => $value)
-		{
-			$_SESSION[$key] = filter($value);
-		}
-	}
+	// if(isset($_REQUEST))
+	// {
+		// foreach($_SESSION as $key => $value)
+		// {
+			// $_SESSION[$key] = filter($value);
+		// }
+	// }
 ?>

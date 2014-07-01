@@ -2,8 +2,8 @@
 // if (defined('WEB_INDEX')) {header("Location: /?page=Modules_News");}
 ?>
 
-<button onclick='loadAjaxPage("Modules_User-Panel_Web-Market&subpage=Sell","content");'>Sell Item</button>
-<button onclick='loadAjaxPage("Modules_User-Panel_Web-Market&subpage=Buy","content");'>Buy Item</button>
+<a href="/?page=Modules_User-Panel_Web-Market&subpage=Sell"><button>Sell Item</button></a>
+<a href="/?page=Modules_User-Panel_Web-Market&subpage=Buy"><button>Buy Item</button></a>
 <?php
 $page = $_REQUEST['subpage'];
 if(!empty($page) && isset($page)){

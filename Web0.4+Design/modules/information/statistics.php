@@ -1,8 +1,8 @@
 <?php
   // if (defined('WEB_INDEX')) {header("Location: /?page=Modules_News");}
 	$characters = count($grizismudb->query("Select Name From Character")->fetchAll());
-	$maxresetsa = count($grizismudb->query("Select Name From Character Where Resets='".$serverinfo['max_resets']."'")->fetchAll());
-	$mules = count($grizismudb->query("Select Name From Character Where Resets='0' AND cLevel>'0' AND cLevel<'20'")->fetchAll());
+	$maxresetsa = count($grizismudb->query("Select Name From Character Where Resets='".$server['MaxResets']."'")->fetchAll());
+	$mules = count($grizismudb->query("Select Name From Character Where Resets=0 AND cLevel>0 AND cLevel<20")->fetchAll());
 	$accounts = count($grizismudb->query("Select memb___id From MEMB_INFO")->fetchAll());
 	$guilds = count($grizismudb->query("Select G_Name From Guild")->fetchAll());
 	$max = $grizismudb->query("SELECT MaxPlayers,Date FROM MaxPlayers")->fetchAll();            
@@ -56,8 +56,8 @@
 		<tr><td>Muse Elfs:</td><td>$me <font color='orange'>($mep%)</font></td></tr>
 		<tr><td>Elfs:</td><td>$elf <font color='orange'>($elfp%)</font></td></tr>
 		<tr><td>Magic Gladiators:</td><td>$mg <font color='orange'>($mgp%)</font></td></tr>
-		<tr><td>Max Resets Characters:</td><td>$maxresetsa</td></tr>
-		<tr><td>mules(1-20):</td><td>$mules</td></tr>
+		<tr><td>Max Characters:</td><td>$maxresetsa</td></tr>
+		<tr><td>Mules:</td><td>$mules</td></tr>
 		<tr><td>Admins:</td><td>$admins</td></tr>
 		</table>
 	";

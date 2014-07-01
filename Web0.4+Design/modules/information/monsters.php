@@ -1,11 +1,11 @@
 <?php
 // if (defined('WEB_INDEX')) {header("Location: /?page=Modules_News");}
 
-if (!isset($_REQUEST['city']))
+if (!isset($_GET['city']))
 {
-	$_REQUEST['city'] = "Lorencia";
+	$_GET['city'] = "Lorencia";
 }
-$monster = explode("\r\n",file_REQUEST_contents($server['Server_Files_Folder']."/Data/Monster.txt"));
+$monster = explode("\r\n",file_get_contents($server['Server_Files_Folder']."/Data/Monster.txt"));
 for ($i = 0; $i <= count($monster); $i++)
 {
 	$monstera = explode("\"",$monster[$i]);
@@ -14,9 +14,11 @@ for ($i = 0; $i <= count($monster); $i++)
 }
 ?>
 <table class="information">
-<tr><th>Monster</th><th>Cordinates</th><th>Count</th><th>Type</th></tr>
+<thead>
+  <tr><th>Monster</th><th>Cordinates</th><th>Count</th><th>Type</th></tr>
+</thead>
 <?php
-	$monsters_spots = explode("\r\n",file_REQUEST_contents($server['Server_Files_Folder']."/Data/MonsterSetBase.txt"));
+	$monsters_spots = explode("\r\n",file_GET_contents($server['Server_Files_Folder']."/Data/MonsterSetBase.txt"));
 	for($i = 0; $i <= count($monsters_spots); $i++)
 	{
 		//$location = "";
@@ -33,7 +35,7 @@ for ($i = 0; $i <= count($monster); $i++)
 			elseif ($spot[1] == 7) {$location = "Atlans";}
 			elseif ($spot[1] == 8) {$location = "Tarkan";}
 			elseif ($spot[1] == 10) {$location = "Icarus";}
-			if ($location == $_REQUEST['city'] && $spot[2] < 10 && count($spot) > 6 )
+			if ($location == $_GET['city'] && $spot[2] <= 10 && count($spot) > 6 )
 			{
 				if ($spot[3] == $spot[5] && $spot[4] == $spot[6])
 				{
