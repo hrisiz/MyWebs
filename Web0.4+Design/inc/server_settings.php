@@ -1,38 +1,25 @@
-
 <?php
 // if (defined('WEB_INDEX')) {header("Location: /?page=Modules_News");}
-
+$server_db_info = $grizismudb->query("Select * From WebOptions")->fetchAll();
+foreach($server_db_info as $info){
+	$server[$info['WebOption']] = $info['Value'];
+}
 $server['AdminsIps'] = array('127.0.0.1','78.83.158.151');
 $server['Name'] = "GrizisMu";
 $server['Version'] = "97d+99i";
 $server['Download_Files_Folder'] = "download";
 $server['Server_Files_Folder'] = "E:/MuServer";
 $server['Citys'] = array("Lorencia","Davias","Noria","LostTower","Exile","Stadium","Atlans","Tarkan","Icarus");
-$server['MaxLevel'] = 350;
-$server['ResetLevel'] = 340;
-$server['MaxResets'] = 40;
-$server['MaxGrandResets'] = 10;
-$server['ZenForReset'] = 50000000;
-$server['ZenForGrandReset'] = 2000000000;
-$server['ClearStatsZen'] = 1;
-$server['ClearPKZen'] = 50000000;
-$server['AddStatZen'] = 1000000000;
-$server['BonusPointsPerLevel'] = 5;
 $server['Points']['start'] = 25; //start
-$server['Points'][0] = 500; //DW
-$server['Points'][1] = 500; //SM
-$server['Points'][17] = 700;//DK
-$server['Points'][18] = 700;//BK
-$server['Points'][33] = 550;//ELF
-$server['Points'][34] = 550;//ME
-$server['Points'][48] = 600;//MG
+$server['Points'][0] = 450; //DW
+$server['Points'][1] = 450; //SM
+$server['Points'][17] = 400;//DK
+$server['Points'][18] = 400;//BK
+$server['Points'][33] = 450;//ELF
+$server['Points'][34] = 450;//ME
+$server['Points'][48] = 460;//MG
 
-
-$server['ChangeNameStones'] = 1;
-$server['ChangeRaceStones'] = 1;
-$server['ClearStatsStones'] = 1;
 $server['GetZenPerStoneArray'] = Array("25"=>1,"50"=>2,"100"=>3,"200"=>4,"400"=>5);
-$server['GetZenPerStone'] = 4000000;
 
 $server['AddLuckRenas'] = 50;
 
@@ -87,7 +74,7 @@ if ($handle = opendir($server['Download_Files_Folder'])) {
 			$link[$i]['Link'] = $server['Download_Files_Folder']."/".$entry;
 			$i++;
 		}
-    }
+  }
 	closedir($handle);
 }
 for ($i = 0; $i < count($link); $i++)
@@ -95,6 +82,7 @@ for ($i = 0; $i < count($link); $i++)
 	$link[$i]['File_Name'] = explode("/",$link[$i]['Link']);
 	$link[$i]['File_Name'] = end($link[$i]['File_Name']);
 	$link[$i]['Size'] = floor(filesize($link[$i]['Link']) / 1024);
+	$link[$i]['Link_Name'] = "Direct";
 	if ($link[$i]['Size'] >= 1024)
 	{
 		$link[$i]['Size'] = floor(filesize($link[$i]['Link']) / 1000 / 1024);
@@ -112,6 +100,7 @@ for ($i = 0; $i < count($link); $i++)
 		$link[$i]['Size'] .= "KB";
 	}
 }
+array_push($link,array('File_Name' => "GrizisMu.rar",'Size' => "77MB",'Link_Name' => "2shared.com",'Link' => "http://www.2shared.com/file/XxMvVVn7/GrizisMu.html"));
 if ($fp=@fsockopen('127.0.0.1','55901',$ERROR_NO,$ERROR_STR,(float)0.5)) 
 { 
 	fclose($fp); 

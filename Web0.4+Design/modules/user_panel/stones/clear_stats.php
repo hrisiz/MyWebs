@@ -23,6 +23,7 @@ if(isset($_POST['ClearStats'])){
 		// echo"<script>document.getElementById('Stones').innerHTML=\"Stones:".$user['Stones']."\"</script>";
 	}
 }
+echo "<p>This option will cost you ".$server['ClearStatsStones']." Stones</p>";
 ?>
 <form method="POST">
 	<label>Character:</label>

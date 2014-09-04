@@ -27,6 +27,7 @@ if($_POST['ChangeRace']){
 		// echo"<script>document.getElementById('Stones').innerHTML=\"Stones:".$user['Stones']."\"</script>";
 	}
 }
+echo "<p>This option will cost you ".$server['ChangeRaceStones']." Stones</p>";
 ?>
 <form method="POST">
 <label>Character:</label>

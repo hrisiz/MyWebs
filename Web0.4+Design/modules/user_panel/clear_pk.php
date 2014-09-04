@@ -13,6 +13,7 @@ if(isset($_POST['ClearPK'])){
     echo"<p class=\"success\">You successfully clear your character.</p>";
   }
 }
+echo "<p>This option will cost you ".number_format($server['ClearPKZen'])." Zen</p>";
 ?>
 <form Method="POST">
 	<label>Character:</label>

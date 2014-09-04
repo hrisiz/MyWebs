@@ -107,6 +107,9 @@ section>div#content table>thead>tr>th{
   border:1px double red;
   border-bottom:none;
 }
+section>div#content table tr:last-child>th{
+  border:1px double red;
+}
 section>div#content table{
   border-spacing:0px;
   margin-left:auto;
@@ -227,7 +230,7 @@ dd{
   padding:0px;
   display:inline;
 }
-.sucess{
+.success{
   color:rgb(0,224,0);
 }
 .error{
@@ -244,28 +247,4 @@ p.withhiddenelem:hover+*{
   width:100%;
   position:relative;
   text-align:center;
-}
-div#accordion{
-  padding-left:10px;
-  padding-right:10px;
-}
-div#accordion>h3{
-  cursor:pointer;
-  text-align:left;
-  font-size:1.3em;
-}
-div#accordion>h3+div{
-  overflow:hidden;
-}
-div#accordion>h3+div>pre{
-  text-align:left;
-  text-indent: 1em;
-}
-div#accordion>h3+div>p:nth-child(2){
-  float:left;
-  margin-top:20px;
-}
-div#accordion>h3+div>p:last-child{
-  float:right;
-  margin-top:20px;
 }

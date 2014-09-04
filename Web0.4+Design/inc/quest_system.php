@@ -33,80 +33,74 @@ function writeQuestsFile(){
   $file_content = file_get_contents($server['Server_Files_Folder']."/DTData/QuestSystem.ini",FILE_TEXT,NULL,0,2429);
   $start = substr ($file_content,0,2429);
   $quests = $grizismudb->query("Select * From Quests")->fetchAll();
+  $grizismudb->exec("Delete From Quests");
+  $grizismudb->exec("DBCC CHECKIDENT (Quests, reseed, 0)");
   $bigString = $start."\r\n";
+	$monster = explode("\n",file_get_contents($server['Server_Files_Folder']."/Data/Monster.txt"));
+	$ordered_quests = Array();
   foreach($quests as $row){
-    $bigString .= "\t".$row['QuestID'];
-    $bigString .= "\t0";
-    $bigString .= "\t0";
-    $bigString .= "\t0";
-    $bigString .= "\t".$row['MonsterID'];
-    $bigString .= "\t-1";
-    $bigString .= "\t".$row['MonstersCount'];
-    $bigString .= "\t\"-\"";
-    $bigString .= "    		                \"-\"";
-    $bigString .= "     	                \"-\"";
-    $bigString .= "                           \t0";
-    $bigString .= "\t0";
-    $bigString .= "\t0";
-    $bigString .= "\t0";
-    $bigString .= "\t0";
-    $bigString .= "\t0";
-    $bigString .= "\t0";
-    $bigString .= "\t0";
-    $bigString .= "\t0";
-    $bigString .= "\t0";
-    $bigString .= "\t0";
-    $bigString .= "\t0";
-    $bigString .= "\t0";
-    $bigString .= "\t0";
-    $bigString .= "\t0";
-    $bigString .= "\t0";
-    $bigString .= "\t0";
-    $bigString .= "\r\n";
+		$monster_level = explode("\"",$monster[$row['MonsterID']]);
+		$monster_level = explode("\t",$monster_level[2]);
+		$monster_level = $monster_level[1];
+		if(!isset($ordered_quests[$monster_level])){
+			$ordered_quests[$monster_level] = array();
+		}
+		array_push($ordered_quests[$monster_level],Array('MonsterID' => $row['MonsterID'],'MonstersCount' =>$row['MonstersCount']));
+	}
+	ksort($ordered_quests);
+	$i = 1;
+  foreach($ordered_quests as $questa){
+		foreach($questa as $row){
+			print_r($row);
+			$bigString .= "\t".$i++;
+			$bigString .= "\t0";
+			$bigString .= "\t0";
+			$bigString .= "\t0";
+			$bigString .= "\t".$row['MonsterID'];
+			$bigString .= "\t-1";
+			$bigString .= "\t".$row['MonstersCount'];
+			$monster_name = explode("\"",$monster[$row['MonsterID']]);
+			$monster_name = str_replace('	',' ',$monster_name[1]);
+			$bigString .= "\t\"Kill ".$row['MonstersCount']." $monster_name\"";
+			$bigString .= "    		                \"-\"";
+			$bigString .= "     	                \"Random item for your character class.\"";
+			$bigString .= "                           \t0";
+			$bigString .= "\t0";
+			$bigString .= "\t0";
+			$bigString .= "\t0";
+			$bigString .= "\t0";
+			$bigString .= "\t0";
+			$bigString .= "\t0";
+			$bigString .= "\t0";
+			$bigString .= "\t0";
+			$bigString .= "\t0";
+			$bigString .= "\t0";
+			$bigString .= "\t0";
+			$bigString .= "\t0";
+			$bigString .= "\t0";
+			$bigString .= "\t0";
+			$bigString .= "\t0";
+			$bigString .= "\t0";
+			$bigString .= "\r\n";
+			$grizismudb->exec("Insert Into Quests values(".$row['MonsterID'].",".$row['MonstersCount'].",1)");
+		}
   }
   $bigString .= "// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
-  file_put_contents($server['Server_Files_Folder']."/DTData/QuestSystem.ini",$bigString);
-}
-function get_quest_item($char_info){
-  global $grizismudb;
-  $type = rand(1,11);
-  $ids1 = $grizismudb->query("Select id From Items Where type=$type")->fetchAll();
-  $counter = 0;
-  while((++$counter) < $char_info['Resets']);
-  echo $counter;
-}
-function add_item_types_to_DB(){
-  global $server;
-  global $grizismudb;
-  $counter = 1;
-  $file_content = file_get_contents($server['Server_Files_Folder']."/Data/lang/kor/item(Kor).txt");
-  $type = 0;
-  foreach(explode("\r\n",$file_content) as $row){
-    $cols = explode("\t",$row);
-    if(preg_match('/^(\d|\d\d)$/',$row)){
-      $type = intval($row);
-    }
-    if(preg_match('/^\d/',$row) && count($cols) > 6){
-      $arr = array_slice($cols, -4, 4);
-      echo substr($cols[6],1,-1).":".$arr[0].$arr[1].$arr[2].$arr[3]."<br>" ;
-      
-      $grizismudb->query("Update Items Set c1=$arr[0],c17=$arr[1],c33=$arr[2],c48=$arr[3] Where id=$cols[0] AND type=$type");
-      $counter++;
-    }
-  }
+	file_put_contents($server['Server_Files_Folder']."/DTData/QuestSystem.ini",$bigString);
 }
 function generateQuests(){
   global $grizismudb;
   $grizismudb->exec("Delete From Quests");
   $grizismudb->exec("DBCC CHECKIDENT (Quests, reseed, 0)");
   writeQuestsFile();
-  $bad_monsters = array(100,101,102,103);
-  for($monster=0;$monster < 130;$monster++){
+  $bad_monsters = array(52,53,78,79,80,81,82,83);
+	$max_monster_id = 83;
+  for($monster=0;$monster < $max_monster_id;$monster++){
     if(!in_array($monster,$bad_monsters)){
       $count = getMonstersCount($monster);
+			$type = 1;
       if($count > 0){
-        $grizismudb->exec("Insert Into Quests values(".$monster.",".getMonstersCount($monster).")");
-        echo("Insert Into Quests values(".$monster.",".getMonstersCount($monster).")");
+        $grizismudb->exec("Insert Into Quests values(".$monster.",".$count.",$type)");
       }
     }
   }

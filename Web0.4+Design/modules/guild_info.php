@@ -22,12 +22,12 @@ $all_races_name = Array(1=>"SM",17=>"BK",33=>"ME",48=>"MG",0=>"DW",16=>"DK",32=>
 	foreach($characters as $char){	
 		$status = Count($grizismudb->query("Select ConnectStat From MEMB_STAT Where memb___id='$char[4]' AND ConnectStat = 1")->fetchAll());
 		$char_in_game = Count($grizismudb->query("Select * From AccountCharacter Where GameIDC='$char[0]'")->fetchAll());
-		$status = "<span class='error'>Offline</span>";
+		$status_text = "<span class='error'>Offline</span>";
 		if ($status >= 1 && $char_in_game >= 1)
 		{
-			$status = "<span class='success'>Online</span>";
+			$status_text = "<span class='success'>Online</span>";
 		}
-		echo"<tr><td>$counter</td><td><a href=\"/?page=Modules_Character-Info&CharacterName=$char[0]\">$char[0]</a></td><td>$char[2]/$char[1]</td><td>".$all_races_name[$char[3]]."</td><td>$status</td></tr>";
+		echo"<tr><td>$counter</td><td><a href=\"/?page=Modules_Character-Info&CharacterName=$char[0]\">$char[0]</a></td><td>$char[2]/$char[1]</td><td>".$all_races_name[$char[3]]."</td><td>$status_text</td></tr>";
 		$counter++;
 	}
 ?>

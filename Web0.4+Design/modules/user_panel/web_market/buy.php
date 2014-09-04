@@ -1,4 +1,17 @@
 <?php
+// if($_SESSION['User'] != 'Admin' && $_SESSION['User'] != 'hrisiz'){
+  // echo "<p>Don't work for few minsutes.</p>";
+  // return "";  
+// }
+if(isset($_GET['page_count'])){
+	$page_count = $_GET['page_count'];
+	if($page_count < 0){
+		 $page_count = 0;
+	}
+}else{
+	$page_count = 0;
+}
+$count_per_page = 5;
 if(isset($_POST['GetItem'])){
 	$item_id = $_POST['item_id'];
 	$market_item = $grizismudb->query("Select * From Web_Market Where Id=$item_id")->fetchAll();
@@ -63,7 +76,7 @@ if(isset($_POST['GetItem'])){
 				$stones_code1 = "Update Stones Set Stones=Stones-".$market_item['Stones']." Where AccountId='$account'";
 				$renas_code1 = "Update Renas Set Renas=Renas-".$market_item['Renas']." Where AccountId='$account'";
 				
-				$grizismudb->exec("Insert Into Web_House values('$account',0x".$market_item['Item'].",".time().")");
+				$grizismudb->exec("Insert Into Web_House values('$account',0x".$market_item['Item'].",".time().",'Market')");
 				
 				if($market_item['Zen'] > 0)
 				$grizismudb->exec($bank_code1);
@@ -91,10 +104,11 @@ if(isset($_POST['GetItem'])){
   </thead>
 <tbody>
 <?php
-	$i = 1;
-	foreach($grizismudb->query("Select AccountId,Item,Stones,Zen,Renas,Posted_Date,Id From Web_Market order by Posted_Date desc") as $market_item){
+	$i = $page_count*$count_per_page+1;
+	foreach($grizismudb->query("Select AccountId,Item,Stones,Zen,Renas,Posted_Date,Id From Web_Market order by Posted_Date desc OFFSET ".$page_count*$count_per_page." ROWS FETCH NEXT $count_per_page ROWS ONLY") as $market_item){
 		$item_info = get_item_info($market_item[1]);
 		$item_options = "";
+		$char = $grizismudb->query("Select Name From Character Where AccountId='$market_item[0]' order by Resets desc,cLevel desc")->fetch();
 		foreach($item_info['excellent_options'] as $item_option){
 			$item_options .= "<br>".$item_option;
 		}
@@ -104,10 +118,10 @@ if(isset($_POST['GetItem'])){
 					$i
 				</td>
 				<td>
-					From:<a href=\"?page=Modules_Character-Info&CharacterName=$market_item[0]\">$market_item[0]</a><br>
+					From:<a href=\"?page=Modules_Character-Info&CharacterName=$char[0]\">$char[0]</a><br>
 					On: ".date("d.m.Y",$market_item[5])."<br>
 					At: ".date(" h:i:s",$market_item[5])."</td>
-				<td onmouseover=\"return overlib('$onmouseover');\" onmouseout=\"return nd()\">
+				<td style=\"text-align:center;\" onmouseover=\"return overlib('$onmouseover');\" onmouseout=\"return nd()\">
 					<img src=\"images/items/".$item_info['image']."\"/>
 				</td>
 				<td>
@@ -134,3 +148,11 @@ if(isset($_POST['GetItem'])){
 ?>
 </tbody>
 </table>
+<?php
+  if($page_count > 0 ){
+?>
+<a href="/?page=Modules_User-Panel_Web-Market&subpage=Buy&page_count=<?=$page_count-1?>"><< Previous</a>
+<?php
+  }
+?>
+<a href="/?page=Modules_User-Panel_Web-Market&subpage=Buy&page_count=<?=$page_count+1?>">Next >></a>

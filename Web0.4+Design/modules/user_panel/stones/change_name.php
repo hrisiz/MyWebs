@@ -40,6 +40,7 @@ if(isset($_POST['ChangeName'])){
 		// echo"<script>document.getElementById('Stones').innerHTML=\"Stones:".$user['Stones']."\"</script>";
 	}
 }
+echo "<p>This option will cost you ".$server['ChangeNameStones']." Stones</p>";
 ?>
 <form method="POST">
 	<label>Character:</label>

@@ -5,7 +5,7 @@
 	$mules = count($grizismudb->query("Select Name From Character Where Resets=0 AND cLevel>0 AND cLevel<20")->fetchAll());
 	$accounts = count($grizismudb->query("Select memb___id From MEMB_INFO")->fetchAll());
 	$guilds = count($grizismudb->query("Select G_Name From Guild")->fetchAll());
-	$max = $grizismudb->query("SELECT MaxPlayers,Date FROM MaxPlayers")->fetchAll();            
+	$max = $grizismudb->query("SELECT Value FROM WebOptions Where WebOption='MaxPlayers'")->fetchAll();            
 	$dw = count($grizismudb->query("Select Name From Character Where Class='0'")->fetchAll());
 	$sm = count($grizismudb->query("Select Name From Character Where Class='1'")->fetchAll());
 	$dk = count($grizismudb->query("Select Name From Character Where Class='16'")->fetchAll());

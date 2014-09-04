@@ -1,6 +1,6 @@
 <?php
 // if (defined('WEB_INDEX')) {header("Location: /?page=Modules_News");}
-  if(isset($_SESSION['last_session_request']) && $_SESSION['last_session_request'] > time()-2){
+  if(isset($_SESSION['last_session_request']) && $_SESSION['last_session_request'] > time()-1){
       header("location: flood.html");
       exit;
   }

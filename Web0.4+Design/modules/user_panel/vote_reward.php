@@ -16,7 +16,7 @@ else
 	{
 
 		$check_vote = count($grizismudb->query("Select * From Voted_Players Where Link_Id=".$_SESSION['Voted_link_id']." AND AccountId='$account'")->fetchAll());
-		if(time() - $_SESSION['Voted_time'] < 10){
+		if(time() - $_SESSION['Voted_time'] < 5){
 			echo"<p class=\"error\">Please vote correctly!</p>";
 		}elseif($check_vote > 0){
 			echo"<p class=\"error\">You already voted for this link!</p>";
@@ -41,12 +41,14 @@ else
 	}
 }
 echo"<table class=\"content_table\">";
+$i = 0;
 foreach($grizismudb->query("Select * From VoteLinks") as $link){
+	$i++;
 	$check_is_time_end = $grizismudb->query("Select * From Voted_Players Where AccountId='$account' AND Link_Id=$link[0]")->fetchAll();
 	if (time() - $check_is_time_end[0][2] >= ($link['Time'])){
 		$grizismudb->exec("Delete From Voted_Players Where AccountId='$account' AND Link_Id=$link[0]");
 	}
-	echo"<tr><td><img src=\"".$link['img']."\" alt=\"image\" width=\"60\" height=\"40\"/></td><td id=\"vote_timer\">
+	echo"<tr><td><img src=\"".$link['img']."\" alt=\"image\" width=\"60\" height=\"40\"/></td><td id=\"vote_timer$i\">
 	<form Method=\"POST\">
 		<input type=\"hidden\" name=\"id\" value=\"$link[0]\"/>";
 	$check_vote = count($grizismudb->query("Select * From Voted_Players Where Link_Id=$link[0] AND AccountId='$account'")->fetchAll());
@@ -56,7 +58,7 @@ foreach($grizismudb->query("Select * From VoteLinks") as $link){
 		$end_time_m = floor($time_to_end/60 - ($end_time_h*60));
 		$end_time_s = floor($time_to_end - $end_time_m*60 - $end_time_h*60*60);		
 		echo"$end_time_h Hours $end_time_m Minutes $end_time_s Seconds";//:$end_time_s";
-		echo"<script>timer_start($time_to_end,'vote_timer')</script>";
+		echo"<script>timer_start($time_to_end,'vote_timer$i')</script>";
 	}
 	else
 	{

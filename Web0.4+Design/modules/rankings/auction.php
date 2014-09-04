@@ -20,12 +20,12 @@
   foreach(($grizismudb->query("Select * From AuctionBets Order by Zen desc OFFSET ".$page_count*$count_per_page." ROWS FETCH NEXT $count_per_page ROWS ONLY")->fetchAll()) as $account){
     $i++;
     $end_time = get_time(time()-$account['Posted_Date']);
-    $character = $grizismudb->query("Select Top 1 Name From Character Where AccountId='".$account['AccountId']."' order by WeekTime desc")->fetchAll();
+    $character = $grizismudb->query("Select Top 1 Name From Character Where AccountId='".$account['AccountId']."' order by Resets desc")->fetchAll();
     $character = $character[0][0];
   ?>	
     <tr>
       <td><?=$i?></td>
-      <td><?=$account['AccountId']?>[<a href=\"?page=CharacterInfo&CharacterName=<?=$character?>\"><?=$character?><a/>]</td>
+      <td><?=$account['AccountId']?>[<a href="?page=Modules_Character-Info&CharacterName=<?=$character?>"><?=$character?><a/>]</td>
       <td><?=number_format($account['Zen'])?></td>
       <td><?=($end_time['Minutes']+($end_time['Hours']*60))?> Minutes Ago</td>
     </tr>
@@ -37,8 +37,8 @@
 <?php
   if($page_count > 0 ){
 ?>
-<a href="/?page=Modules_Ranking&subpage=Characters&page_count=<?=$page_count-1?>"><< Previous</a>
+<a href="/?page=Modules_User-Panel_Auction&page_count=<?=$page_count-1?>"><< Previous</a>
 <?php
   }
 ?>
-<a href="/?page=Modules_Ranking&subpage=Characters&page_count=<?=$page_count+1?>">Next >></a>
+<a href="/?page=Modules_User-Panel_Auction&page_count=<?=$page_count+1?>">Next >></a>

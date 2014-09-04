@@ -124,3 +124,28 @@ div#character_info>table+dl+dl{
   width:100%;
   text-align:left;
 }
+div#accordion{
+  padding-left:10px;
+  padding-right:10px;
+}
+div#accordion>h3{
+  cursor:pointer;
+  text-align:left;
+  font-size:1.3em;
+}
+div#accordion>h3+div{
+  overflow:hidden;
+	padding-left:10px;
+}
+div#accordion>h3+div>p{
+  text-align:left;
+  text-indent: 1em;
+}
+div#accordion>h3+div>p:nth-child(2){
+  float:left;
+  margin-top:20px;
+}
+div#accordion>h3+div>p:last-child{
+  float:right;
+  margin-top:20px;
+}

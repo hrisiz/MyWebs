@@ -8,7 +8,7 @@
 	<?php
 		for ($i = 0;$i < count($link);$i++)
 		{
-			echo "<tr><td>".$link[$i]['File_Name']."</td><td><a href=\"".$link[$i]['Link']."\">Click</a></td><td>".$link[$i]['Size']."</td></tr>";
+			echo "<tr><td>".$link[$i]['File_Name']."</td><td><a href=\"".$link[$i]['Link']."\">".$link[$i]['Link_Name']."</a></td><td>".$link[$i]['Size']."</td></tr>";
 		}
 	?>
 </table>

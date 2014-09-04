@@ -11,12 +11,12 @@
 	$char_info_for_acc = $char_info_for_acc[0];
 	$all_races_short_name = Array(1=>"SM",17=>"BK",33=>"ME",48=>"MG",0=>"DW",16=>"DK",32=>"Elf");
 	$all_races_full_name = Array(1=>"SoulMaster",17=>"BladeKnight",33=>"MuseElf",48=>"MagicGladiator",0=>"DarkWizard",16=>"DarkKnight",32=>"Elf");
-	$status = Count($grizismudb->query("Select ConnectStat From MEMB_STAT Where memb___id='".$char."' AND ConnectStat = 1")->fetchAll());
+	$status = Count($grizismudb->query("Select ConnectStat From MEMB_STAT Where memb___id='".$char_info['AccountID']."' AND ConnectStat = 1")->fetchAll());
 	$char_in_game = Count($grizismudb->query("Select * From AccountCharacter Where GameIDC='$char'")->fetchAll());
-	$status = "<span class='error'>Offline</span>";
-	if ($status >= 1 && $char_in_game >= 1)
+	$status_text = "<span class='error'>Offline</span>";
+	if ($status > 0 && $char_in_game > 0)
 	{
-		$status = "<span class='success'>Online</span>";
+		$status_text = "<span class='success'>Online</span>";
 	}
 	$special = Array(0=>"Normal User",NULL=>"Normal User",8=>"Game Master");
 	$maps = Array("Lorencia","Dungeon","Davias","Noria","Losttower","Exile","Stadium","Atlans","Tarkan","Devil Squeare","Icarus","Blood Castle 1","Blood Castle 2","Blood Castle 3","Blood Castle 4","Blood Castle 5","Blood Castle 6");
@@ -43,7 +43,7 @@
     <dt>Type</dt>
       <dd><?=$special[$char_info['CtlCode']] ?></dd>
     <dt>Status</dt>
-      <dd><?=$status ?></dd>
+      <dd><?=$status_text ?></dd>
     <dt>Level</dt>
       <dd><?=$char_info['cLevel'] ?></dd>
     <dt>Reset</dt>

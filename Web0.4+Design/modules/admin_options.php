@@ -4,7 +4,7 @@
       <a onclick="startLoading()" href="/?page=Modules_Admin-Panel_Monsters"><li>Monsters</li></a>
       <a onclick="startLoading()" href="/?page=Modules_Admin-Panel_Commonserver"><li>Commonserver</li></a>
       <a onclick="startLoading()" href="/?page=Modules_Admin-Panel_Shops"><li>Shops</li></a>
-      <a onclick="startLoading()" href="/?page=Modules_Admin-Panel_Quests"><li>Quests</li></a>
+      <a onclick="startLoading()" href="/?page=Modules_Admin-Panel_Server_Quests"><li>Quests</li></a>
       <a onclick="startLoading()" href="/?page=Modules_Admin-Panel_Reload"><li>Reload</li></a>
     </ul>	
   </li>

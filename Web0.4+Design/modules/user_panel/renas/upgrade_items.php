@@ -4,6 +4,10 @@ if(!isset($_SESSION['User'])){
   echo "<p>You should be logged in for this page.</p>";
   return "";  
 }
+if($_SESSION['User'] != 'Admin'){
+  echo "<p>Don't work for a while I need fox it :).</p>";
+  return "";  
+}
 if(isset($_POST['ready'])){
 	$item = $_POST['item'];
 	$option = $_POST['option'];

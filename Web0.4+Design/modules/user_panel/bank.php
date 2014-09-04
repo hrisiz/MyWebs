@@ -4,14 +4,13 @@ if(!isset($_SESSION['User'])){
   echo "<p>You should be logged in for this page.</p>";
   return "";  
 }
-
+$bank_money = $grizismudb->query("Select Bank From Bank Where AccountId='$account'")->fetchAll();
 if (isset($_POST['GetZen']))
 {
 	$money = intval($_POST['Money']);
 	$char = $_POST['character'];
 	$is_char_exist = $grizismudb->query("Select Money From Character Where AccountId='$account' AND Name='$char'")->fetchAll();
 	$is_online = count($grizismudb->query("Select * From MEMB_STAT Where memb___id='$account' AND ConnectStat>0")->fetchAll());
-	$bank_money = $grizismudb->query("Select Bank From Bank Where AccountId='$account'")->fetchAll();
 	if(count($is_char_exist) <= 0){
 		echo"<p class=\"error\">This is not your character!!!</p>";
 	}elseif($money < 0){
@@ -37,7 +36,6 @@ if (isset($_POST['PutZen']))
 	$char = $_POST['character'];
 	$is_char_exist = $grizismudb->query("Select Money From Character Where AccountId='$account' AND Name='$char'")->fetchAll();
 	$is_online = count($grizismudb->query("Select * From MEMB_STAT Where memb___id='$account' AND ConnectStat>0")->fetchAll());
-	$bank_money = $grizismudb->query("Select Bank From Bank Where AccountId='$account'")->fetchAll();
 	if(count($is_char_exist) <= 0){
 		echo"<p class=\"error\">This is not your character!!!</p>";
 	}elseif($money < 0){
@@ -61,6 +59,7 @@ if (isset($_POST['PutZen']))
 		// echo"<script>document.getElementById(\"BankZen\").innerHTML=\"Bank Zen: ".number_format($bank_money[0][0]+$money)."\"</script>";
 	}
 }
+echo "<p> You have ".number_format($bank_money[0][0])." Zen in the bank</p>";
 ?>
 <form Method="POST">
 	

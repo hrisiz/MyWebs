@@ -8,7 +8,7 @@
   }else{
     $page_count = 0;
   }
-  $count_per_page = 10;
+  $count_per_page = 15;
 ?>
 <table class="ranking">
   <thead>
@@ -29,15 +29,15 @@
 			{
 				$guild = "-";
 			}
-			$status = Count($grizismudb->query("Select ConnectStat From MEMB_STAT Where memb___id='".$char["AccountId"]."' AND ConnectStat = 1")->fetchAll());
+			$status_db = Count($grizismudb->query("Select ConnectStat From MEMB_STAT Where memb___id='".$char["AccountId"]."' AND ConnectStat = 1")->fetchAll());
 			$char_in_game = Count($grizismudb->query("Select * From AccountCharacter Where GameIDC='$char[0]'")->fetchAll());
 			$status = "<span class='error'>Offline</span>";
-			if ($status >= 1 && $char_in_game >= 1)
+			if ($status_db >= 1 && $char_in_game >= 1)
 			{
 				$status = "<span class='success'>Online</span>";
 			}			
       $i++;
-			echo"<tr><td>$i</td><td onclick='loadAjaxPage(\"Modules_Character-Info&CharacterName=$char[0]\",\"content\")'>$char[0]</a></td><td>$char[1]/$char[2]</td><td>".$all_races_name[$char['Class']]."</td><td onclick='loadAjaxPage(\"Modules_Guild-Info&GuildName=CreativE\",\"content\")'>$guild</td><td>$status</td></tr>";
+			echo"<tr><td>$i</td><td><a href=\"?page=Modules_Character-Info&CharacterName=$char[0]\">$char[0]</a></a></td><td>$char[1]/$char[2]</td><td>".$all_races_name[$char['Class']]."</td><td onclick='loadAjaxPage(\"Modules_Guild-Info&GuildName=CreativE\",\"content\")'>$guild</td><td>$status</td></tr>";
 		}
 	?>
 </tbody>

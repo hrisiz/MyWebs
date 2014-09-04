@@ -1,23 +1,31 @@
 <?php
 // if (defined('WEB_INDEX')) {header("Location: /?page=Modules_News");}
+// echo "<p>Wait for the server start.</p>";
+// return "";
+// if($_SESSION['User'] != 'Admin'){
+  // echo "<p>Not Working for a while.</p>";
+  // return "";  
+// }
 $auction = $grizismudb->query("Select Top 1 * From Auction order by ID desc")->fetchAll();
 if(count($auction) > 0){
 	$auction = $auction[0];
 	$item = get_item_info($auction['Item']);
 	$biggest_bet = $grizismudb->query("Select Top 1 Zen From AuctionBets order by Zen desc")->fetchAll();
-	if(count($biggest_bet) <= 0){
-		$biggest_bet = $grizismudb->query("Select Zen From Items Where uid=".$item['item_DB_info']['uid']."")->fetchAll();
-	}
 	$biggest_bet = $biggest_bet[0][0];
-	
+	if(count($biggest_bet) <= 0){
+		$biggest_bet = $auction['Zen']*1000000-1;
+	}
 	if(isset($_POST['Bet'])){
     if(!isset($_SESSION['User'])){
       echo "<p>You should be logged in for this function.</p>";
     }else{
-      $bet = intval($_POST['bet_money']);
-      if($bet <= $biggest_bet){
+			$bank = $grizismudb->query("Select * From Bank Where AccountId='".$_SESSION['User']."'")->fetchAll();
+      $bet = $_POST['bet_money'];
+      if(!is_numeric($bet)){
+        echo "<p class=\"error\">Please use only numbers.</p>";
+      }elseif($bet < $biggest_bet){
         echo "<p class=\"error\">You do not cover the minimum bet.</p>";
-      }elseif($bet > $user['Bank_Zen']){
+      }elseif($bet > $bank[0]['Bank']){
         echo"<p class=\"error\">You don't have enough Zen</p>";
       }else{
         $check_is_exist = count($grizismudb->query("Select * From AuctionBets Where AccountId='$account'")->fetchAll());
@@ -34,8 +42,6 @@ if(count($auction) > 0){
         }
         $grizismudb->exec("Update Bank Set Bank=Bank-$bet Where AccountId='$account'");
         $grizismudb->commit();
-        $user['Bank_Zen'] = $user['Bank_Zen'] - $bet;
-        echo"<script>update_info('user_bank_zen',".$user['Bank_Zen'].")</script>";
         echo"<p class=\"success\">You successfully bet</p>";
         $biggest_bet = $bet + $last_user_bet[0]['Zen'];
       }
@@ -55,14 +61,14 @@ if(count($auction) > 0){
 	<script>timer_start(<?=$time_to_end?>,'auction_timer')</script>
 	<div onmouseover="return overlib('<?=$onmouseover?>');" onmouseout="return nd()"><img src="images/items/<?=$item['image']?>"/></div>
 
-	<form method="POST">
+	<form onsubmit="startLoading()" method="POST">
 		<label for="money">Money</label>
 		<input id="money" class="money" type="number" name="bet_money" value="<?=$biggest_bet+1?>" min="<?=$biggest_bet+1?>"/>
 		<br>
     <?php
       if(isset($_SESSION['User'])){
     ?>
-        <input onclick="startLoading()" type="submit" name="Bet" value="Bet"/>
+        <input type="submit" name="Bet" value="Bet"/>
     <?php
       }
     ?>

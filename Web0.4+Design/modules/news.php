@@ -9,9 +9,9 @@
 ?>
 <h3><?=$news['Title']?></h3>
 <div>
-  <pre>
+  <p>
     <?=$news['News']?>
-  </pre>
+  </p>
   <p class="POSTED">Posted By:<?=$news['PostedBy']?></p>
   <p>Last Update: <?= date("H:i d/m/Y",$news['LastUpdate'])?></p>
 </div>

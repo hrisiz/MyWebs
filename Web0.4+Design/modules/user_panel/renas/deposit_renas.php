@@ -43,7 +43,7 @@ if (isset($_POST['DepositRenas'])){
 ?>
 <form Method="POST">
 	<label>Character:</label>
-	<select name=\"character\">
+	<select name="character">
 		<?php echo get_chars();?>
 	</select><br>
 	<input onclick="startLoading()" type="submit" value="DepositRenas" name="DepositRenas"/>

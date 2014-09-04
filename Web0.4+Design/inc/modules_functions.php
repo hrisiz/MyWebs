@@ -38,8 +38,9 @@ function free_slots($x,$y,$zaeti_slotove){
 		for($k=0;$k<$x;$k++){
 			if((!in_array($i+$k,$zaeti_slotove) && $x==1) || (!in_array($i+$k,$zaeti_slotove) && $x>1 && $i%8!=0 && $i%8+$k<=8))
 				++$svobodni; 
-			for($l=1;$l<$y;$l++)if(!in_array($i+$k+$l*8,$zaeti_slotove) && (int)(($i+$k+$l*8)/8) <=15 )
-				++$svobodni; 
+			for($l=1;$l<$y;$l++)
+				if(!in_array($i+$k+$l*8,$zaeti_slotove) && (int)(($i+$k+$l*8)/8)<15 )
+					++$svobodni; 
 			if($svobodni==$x*$y)
 				return $i-1;
 		}
@@ -130,7 +131,7 @@ function add_item($item_type,$item_id=0,$item_durability=255,$item_level=0,$item
 		} 
 		else $br++; 
 	} 
-  if(is_int($item_type)){
+  if(is_numeric($item_type)){
     $item_info=$grizismudb->query("select X,Y from Items where type='$item_type' and id='$item_id'")->fetchAll();
     $new_item=generate_item_hex($item_type,$item_id,$item_durability,$item_level,$item_option,$item_skill,$item_luck,$ex1,$ex2,$ex3,$ex4,$ex5,$ex6); 
   }else{
@@ -142,10 +143,9 @@ function add_item($item_type,$item_id=0,$item_durability=255,$item_level=0,$item
 	if($br==120)
 		$svoboden_slot=0; 
 	else 
-		$svoboden_slot=free_slots($item_info[0],$item_info[1],$zaeti_slotove); 
-	if($svoboden_slot !=1993){ 
+		$svoboden_slot = free_slots($item_info['X'],$item_info['Y'],$zaeti_slotove); 
+	if($svoboden_slot != 1993){ 
     $new_items=substr_replace($items,$new_item, $svoboden_slot*20, 20);
-    echo $new_item;
 		$grizismudb->exec("Update warehouse Set items=0x$new_items Where AccountID='$account'"); 
 		return 1; 
 	} 

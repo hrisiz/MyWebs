@@ -44,7 +44,7 @@
 			$today = date("Y-m-d H:i:s"); 
 			$grizismudb->beginTransaction();
 			$check[0] = $grizismudb->exec("SET IDENTITY_INSERT MEMB_INFO ON ");
-			$check[1] = $grizismudb->exec("Insert Into MEMB_INFO (memb_guid,memb___id,memb__pwd,memb_name,sno__numb,post_code,addr_deta,tel__numb,phon_numb,mail_addr,fpas_ques,fpas_answ,job__code,appl_days,modi_days,out__days,true_days,mail_chek,bloc_code,ctl1_code,country) values ('$guid[0]','$user_name','$pass','$user_name','Null','1234','11111','11111','11111','$-mail','$sq','$sa','1','$today','$today','$today','$today','1','0','0','$country')");
+			$check[1] = $grizismudb->exec("Insert Into MEMB_INFO (memb_guid,memb___id,memb__pwd,memb_name,sno__numb,post_code,addr_deta,tel__numb,phon_numb,mail_addr,fpas_ques,fpas_answ,job__code,appl_days,modi_days,out__days,true_days,mail_chek,bloc_code,ctl1_code,country) values ('$guid[0]','$user_name','$pass','$user_name',NULL,'1234','11111','11111','11111','$-mail','$sq','$sa','1','$today','$today','$today','$today','1','0','0','$country')");
 			$check[2] = $grizismudb->exec("INSERT INTO VI_CURR_INFO (ends_days,chek_code,used_time,memb___id,memb_name,memb_guid,sno__numb,Bill_Section,Bill_value,Bill_Hour,Surplus_Point,Surplus_Minute,Increase_Days )  VALUES ('2005','1',1234,'$user_name','$user_name','$guid[0]','111111111','6','3','6','6','$today','0' )");
 			if(count(array_diff ($check,array_fill(0,3,''))) != 3){
 				echo"<p class='error'>Problem with register module please connect with admin on skype:grizismu or e-mail:grizismu@abv.bg</p>";

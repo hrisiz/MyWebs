@@ -3,9 +3,10 @@
     echo "<p>You should be Admin for this page.</p>";
     return '';
   }
+	if($_POST['quest_submit']){
+		generateQuests();
+	}
 ?>
-<form action="/?page=Modules_Admin-Panel_Search_Found" method="POST">
-  <label for="char">Character:</label>
-  <input id="char" type="text" name="character"><br>
-  <input onclick="startLoading()" type="submit" name="search_admin_char" value="Search">
+<form method="POST">
+  <input onclick="startLoading()" type="submit" name="quest_submit" value="Update">
 </form>

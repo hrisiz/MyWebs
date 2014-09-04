@@ -1,7 +1,7 @@
 <?php
   ob_start();
 	session_start();
-	// include "inc/security.php";
+	include "inc/security.php";
 	include "inc/sql_connect.php";
 	include "inc/server_settings.php";
 	include "inc/modules_functions.php";
@@ -64,7 +64,7 @@
           <?php include "inc/switch.php"?>
         </div>
         <div id="right_menu">
-          <div class="rightSpear"><a onclick="startLoading()" href="/?page=Modules_Top-Characters"><p>Top 10 Characters</p></a></div>
+          <div class="rightSpear"><a onclick="startLoading()" href="/?page=Modules_Ranking&amp;subpage=Online&amp;page_count=0"><p>Online Players</p></a></div>
           <div class="rightSpear"><a onclick="startLoading()" href="/?page=Modules_Top-Guilds"><p>Top 10 Guilds</p></a></div>
           <div class="rightSpear"><a onclick="startLoading()" href="/?page=Modules_Information&amp;subpage=Statistics"><p>Statistics</p></a></div>
           <div class="rightSpear"></div>
@@ -77,3 +77,6 @@
     </div>
 	</body>
 </html>
+<script>
+start_timer();
+</script>

@@ -44,20 +44,32 @@ if(!isset($_SESSION['User'])){
 	</dl>
   <table>
     <thead>
-      <tr><th>Name</th><th>LvL/Res<th>Class</th><th>Status</th></tr>
+      <tr><th>Name</th><th>LvL/Res<th>Class</th><th>Quest</th><th>Status</th></tr>
     </thead>
     <tbody>
       <?php
       $all_races_name = Array(1=>"SM",17=>"BK",33=>"ME",48=>"MG",0=>"DW",16=>"DK",32=>"Elf");
+			$monster = explode("\n",file_get_contents($server['Server_Files_Folder']."/Data/Monster.txt"));
       foreach($grizismudb->query("Select * From Character Where AccountId='$account' Order by Resets desc,cLevel desc")->fetchAll() as $char){
         $status = Count($grizismudb->query("Select ConnectStat From MEMB_STAT Where memb___id='".$char["AccountId"]."' AND ConnectStat = 1")->fetchAll());
-        $char_in_game = Count($grizismudb->query("Select * From AccountCharacter Where GameIDC='$char[0]'")->fetchAll());
-        $status = "<span class='error'>Offline</span>";
+        $char_in_game = Count($grizismudb->query("Select * From AccountCharacter Where GameIDC='".$char['Name']."'")->fetchAll());
         if ($status >= 1 && $char_in_game >= 1)
         {
-          $status = "<span class='success'>Online</span>";
-        }
-        echo"<tr><td onclick='loadAjaxPage(\"Modules_Character-Info&CharacterName=".$char['Name']."\",\"content\")'>".$char['Name']."</td><td>".$char['cLevel']."/".$char['Resets']."</td><td>".$all_races_name[$char['Class']]."</td><td> $status</td></tr>";
+          $status_txt = "<span class='success'>Online</span>";
+        }else{
+					$status_txt = "<span class='error'>Offline</span>";
+				}
+				$quest_info = $grizismudb->query("Select * From Quests Where QuestId=".$char['QuestNumber']."")->fetchAll();
+				if(empty($quest_info)){
+					$quest = "No Quest";
+				}elseif($quest_info[0]['MonstersCount']<=$char['QuestMonsters']){
+					$quest = "Ready";
+				}else{
+					$id = explode("\"",$monster[$quest_info[0]['MonsterID']]);
+					// $quest = "Kill ".($quest_info[0]['MonstersCount']-$char['QuestMonsters'])." ".$id[1];
+					$quest = "Check on game with /questinfo";
+				}
+        echo"<tr><td onclick='loadAjaxPage(\"Modules_Character-Info&CharacterName=".$char['Name']."\",\"content\")'>".$char['Name']."</td><td>".$char['cLevel']."/".$char['Resets']."</td><td>".$all_races_name[$char['Class']]."</td><td>".$quest."</td><td>$status_txt</td></tr>";
       }
       ?>
     </tbody>
